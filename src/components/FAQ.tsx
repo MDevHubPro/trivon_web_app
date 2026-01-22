@@ -3,98 +3,103 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqItems: FAQItem[] = [
+const faqItems = [
   {
-    question: 'What services does Trivon Digital offer?',
-    answer: 'Trivon Digital offers a comprehensive range of digital services including web development, mobile app development, UI/UX design, digital marketing, blockchain consulting, and more. We provide end-to-end solutions to help businesses transform their digital presence.',
+    question: 'What types of remote resources can I hire through Trivon Digital, and how quickly can I start?',
+    answer: 'You can hire a wide range of remote talent including developers, designers, product managers, and more. We can typically get you started within 48-72 hours depending on your specific requirements.',
   },
   {
-    question: 'How long does a typical project take?',
-    answer: 'Project timelines vary depending on the scope and complexity. A simple website might take 2-4 weeks, while a complex application could take 3-6 months. We provide detailed timelines during our initial consultation.',
+    question: 'How does Trivon Digital ensure the quality and productivity of developers?',
+    answer: 'We have a rigorous vetting process that includes technical assessments, soft skills interviews, and background checks. This ensures world-class talent.',
   },
   {
-    question: 'What is your pricing model?',
-    answer: 'We offer flexible pricing models including fixed-price projects, hourly rates, and retainer agreements. Pricing depends on project scope, timeline, and specific requirements. Contact us for a customized quote.',
+    question: 'What is the minimum contract tenure, and how flexible is the hiring model?',
+    answer: 'Our contracts are flexible to suit your needs, starting from as little as one month. We offer various engagement models including full-time, part-time, and hourly based on your project requirements.',
   },
   {
-    question: 'Do you provide ongoing support?',
-    answer: 'Yes, we offer comprehensive ongoing support and maintenance services. This includes bug fixes, updates, security patches, and feature enhancements. We can create a support plan tailored to your needs.',
+    question: 'How does Trivon Digital ensure a risk-free hiring process, and what if I\'m not satisfied?',
+    answer: 'We offer a risk-free trial period. If you are not satisfied with the resource within the first week, we will replace them at no extra cost or provide a full refund.',
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-16 md:py-24 bg-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Frequently <span className="text-purple-400">Asked</span> Questions
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl">
-            Find answers to common questions about our services and processes.
-          </p>
-        </motion.div>
+    <section className="py-24 bg-black">
+      <div className="container mx-auto px-4 md:px-8">
 
-        <div className="max-w-4xl mx-auto space-y-4">
-          {faqItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-800/50 transition"
+        <div className="flex flex-col lg:flex-row gap-16">
+          {/* Left Column - Header */}
+          <div className="lg:w-1/3">
+            <div className="sticky top-24">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-[#1a1a2e] border border-purple-500/30 mb-6">
+                <span className="text-purple-400 text-xs font-bold flex items-center gap-2 uppercase tracking-wide">
+                  <span className="text-lg leading-none mb-0.5">+</span>
+                  Frequently Asked Question
+                </span>
+              </div>
+
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-[1.1]">
+                Frequently <br />
+                <span className="text-purple-500">Asked</span> <br />
+                Questions
+              </h2>
+
+              <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
+                We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Accordion List */}
+          <div className="lg:w-2/3 space-y-4">
+            {faqItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="border border-[#1f1f23] rounded-2xl bg-black overflow-hidden transition-colors hover:border-purple-500/30"
               >
-                <span className="text-white font-semibold text-lg">{item.question}</span>
-                <motion.svg
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-6 h-6 text-purple-400 flex-shrink-0"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full px-8 py-6 flex items-start justify-between text-left group"
                 >
-                  <path d="M19 9l-7 7-7-7" />
-                </motion.svg>
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-300 leading-relaxed">{item.answer}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                  <div className="flex gap-4">
+                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 flex-shrink-0"></div>
+                    <span className="text-gray-300 font-medium text-sm md:text-base group-hover:text-white transition-colors">
+                      {item.question}
+                    </span>
+                  </div>
+
+                  <span className={`text-gray-500 transition-transform duration-300 ml-4 ${openIndex === i ? 'rotate-180 text-purple-500' : ''}`}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </button>
+
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-8 pb-8 pl-[3.25rem] text-gray-500 text-sm leading-relaxed">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

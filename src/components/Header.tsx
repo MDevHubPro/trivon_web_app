@@ -8,143 +8,100 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isCaseStudy = pathname === '/case-study';
-
+  // New Design: Floating Pill Navbar
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <>
+      <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none md:pointer-events-auto">
+
+        <div className="bg-[#0b0b10]/90 backdrop-blur-md border border-[#1f1f26] rounded-full pl-6 pr-2 py-2 flex items-center gap-8 shadow-2xl pointer-events-auto">
+
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">T</span>
-            </div>
-            <Link href="/" className="text-xl md:text-2xl font-bold text-white">
-              Trivon Digital
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center gap-2 mr-4">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center font-bold text-white">T</div>
+            <span className="text-white font-bold hidden md:block">TRIVON</span>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            <Link 
-              href="/" 
-              className={`transition ${pathname === '/' ? 'text-purple-400' : 'text-white hover:text-purple-400'}`}
-            >
-              Home
-            </Link>
-            <Link 
-              href="/#about" 
-              className="text-white hover:text-purple-400 transition"
-            >
-              About Us
-            </Link>
-            <Link 
-              href="/#services" 
-              className="text-white hover:text-purple-400 transition"
-            >
-              Services
-            </Link>
-            {isCaseStudy ? (
-              <Link 
-                href="/case-study" 
-                className="text-purple-400 border-b-2 border-purple-400 pb-1 transition"
-              >
-                Case Study
-              </Link>
-            ) : (
-              <Link 
-                href="/case-study" 
-                className="text-white hover:text-purple-400 transition"
-              >
-                Portfolio
-              </Link>
-            )}
-            <Link 
-              href="/contact" 
-              className={`transition ${pathname === '/contact' ? 'text-purple-400' : 'text-white hover:text-purple-400'}`}
-            >
-              Contact
-            </Link>
-            <Link 
-              href="/contact" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition font-semibold"
-            >
-              {isCaseStudy ? 'Get Started' : "Let's Talk"}
-            </Link>
-          </div>
+          <nav className="hidden md:flex items-center gap-1">
+            {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study'].map((item) => {
+              const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
+              const isActive = pathname === path;
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-md text-white hover:text-purple-400"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              return (
+                <Link
+                  key={item}
+                  href={path}
+                  className={`text-[10px] font-medium px-4 py-2 rounded-full transition-all ${isActive
+                      ? 'bg-[#1a1a24] text-white border border-gray-700'
+                      : 'text-gray-500 hover:text-white hover:bg-white/5'
+                    }`}
+                >
+                  {item}
+                </Link>
+              )
+            })}
+            <Link
+              href="/contact"
+              className={`text-[10px] font-medium px-4 py-2 rounded-full transition-all ${pathname === '/contact'
+                  ? 'bg-[#1a1a24] text-white border border-gray-700'
+                  : 'text-gray-500 hover:text-white hover:bg-white/5'
+                }`}
             >
+              Contact Us
+            </Link>
+          </nav>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            className="md:hidden w-8 h-8 flex items-center justify-center text-white bg-[#1a1a24] rounded-full border border-gray-700"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
+                <path d="M18 6L6 18M6 6l12 12" />
               ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
+                <path d="M3 12h18M3 6h18M3 18h18" />
               )}
             </svg>
           </button>
-        </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
-            <Link
-              href="/"
-              className="block text-white hover:text-purple-400 transition"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/#about"
-              className="block text-white hover:text-purple-400 transition"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              href="/#services"
-              className="block text-white hover:text-purple-400 transition"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/case-study"
-              className="block text-white hover:text-purple-400 transition"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Portfolio
-            </Link>
+          {/* CTA Button (Hidden on extremely small screens if needed, but keeping for now) */}
+          <Link href="/contact" className="hidden sm:flex bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white text-xs font-bold px-6 py-3 rounded-full items-center gap-2 hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all">
+            Request Quote
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </Link>
+        </div>
+      </header>
+
+      {/* Mobile Slide-out Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-32 px-8 flex flex-col md:hidden animate-in slide-in-from-top-10 duration-200 text-center">
+          <nav className="flex flex-col gap-4 text-center">
+            {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study', 'Contact'].map((item) => {
+              const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
+              return (
+                <Link
+                  key={item}
+                  href={path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-xl font-bold text-white py-2 border-b border-gray-800 hover:text-purple-500 transition-colors"
+                >
+                  {item}
+                </Link>
+              )
+            })}
+
             <Link
               href="/contact"
-              className="block text-white hover:text-purple-400 transition"
               onClick={() => setIsMenuOpen(false)}
+              className="mt-8 bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2"
             >
-              Contact
+              Request Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </Link>
-            <Link
-              href="/contact"
-              className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition text-center font-semibold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Let's Talk
-            </Link>
-          </div>
-        )}
-      </nav>
-    </header>
+          </nav>
+        </div>
+      )}
+    </>
   );
 }
