@@ -47,8 +47,8 @@ const ExpertiseSection = () => {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-                    <div className="lg:col-span-5 relative group w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12  items-end">
+                    {/* <div className="flex lg:col-span-5 relative group w-full">
                         <div className="overflow-hidden bg-[#0D0616] border border-white/10">
                             <Image
                                 src="/assets/expertiseimage1.png"
@@ -58,11 +58,7 @@ const ExpertiseSection = () => {
                                 className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                         </div>
-                    </div>
-
-                    {/* Arrow and Stats Wrapper */}
-                    <div className="lg:col-span-7 flex flex-col gap-8 md:gap-12 w-full">
-                        <div className="hidden md:flex justify-start lg:pl-12 mb-4">
+                        <div className="hidden lg:flex justify-start lg:pl-12 mb-4 bg-red-300">
                             <motion.div
                                 initial={{ opacity: 0, x: -20, y: 20 }}
                                 whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -74,8 +70,64 @@ const ExpertiseSection = () => {
                                 </svg>
                             </motion.div>
                         </div>
+                    </div> */}
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 items-end w-full   overflow-hidden rounded-br-[1.5rem] md:rounded-br-[2.5rem]">
+                    <div className="flex lg:col-span-5 relative group w-full">
+
+                        {/* Image */}
+                        <div className="overflow-hidden bg-[#0D0616] border border-white/10 w-full">
+                            <Image
+                                src="/assets/expertiseimage1.png"
+                                alt="Team Celebration"
+                                width={600}
+                                height={800}
+                                className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                        </div>
+
+                        {/* Arrow Overlay (TOP) */}
+                        <div className="hidden lg:block absolute -top-16 left-[100%] z-10">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20, y: 20 }}
+                                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                                viewport={{ once: true }}
+                                className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="1.5"
+                                    className="w-full h-full text-white"
+                                >
+                                    <path
+                                        d="M7 17L17 7M17 7H7M17 7V17"
+                                        strokeLinecap="square"
+                                        strokeLinejoin="miter"
+                                    />
+                                </svg>
+                            </motion.div>
+                        </div>
+
+                    </div>
+
+
+                    {/* Arrow and Stats Wrapper */}
+                    <div className="lg:col-span-7 flex flex-col    w-full">
+                        {/* <div className="hidden lg:flex justify-start lg:pl-12 mb-4 bg-red-300">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20, y: 20 }}
+                                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                                viewport={{ once: true }}
+                                className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center"
+                            >
+                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="square" strokeLinejoin="miter" />
+                                </svg>
+                            </motion.div>
+                        </div> */}
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 items-end w-full   overflow-hidden">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -83,8 +135,8 @@ const ExpertiseSection = () => {
                                 transition={{ delay: 0.1 }}
                                 className="lg:col-span-3 bg-[#6B2CEC] p-6 2xl:p-10 flex flex-col justify-between min-h-[160px] md:min-h-[220px] border-r border-b border-white/10"
                             >
-                                <p className="text-white/90 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">Project Build</p>
-                                <h3 className="text-4xl md:text-5xl 2xl:text-7xl font-bold tracking-tighter">750+</h3>
+                                <p className="text-white/90 text-[10px] md:text-sm font-bold uppercase tracking-[0.2em]">Project Build</p>
+                                <h3 className="text-xl md:text-3xl 2xl:text-5xl ml-auto font-bold tracking-tighter">750+</h3>
                             </motion.div>
 
                             <motion.div
@@ -94,8 +146,8 @@ const ExpertiseSection = () => {
                                 transition={{ delay: 0.2 }}
                                 className="lg:col-span-3 bg-white p-6 2xl:p-10 flex flex-col justify-between min-h-[160px] md:min-h-[220px] border-r border-b border-white/10"
                             >
-                                <p className="text-black/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-tight">TVL Secured & <br className="hidden md:block" /> Counting</p>
-                                <h3 className="text-[#6B2CEC] text-4xl md:text-3xl 2xl:text-7xl font-bold tracking-tighter">$3.21M</h3>
+                                <p className="text-black/60 text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] leading-tight">TVL Secured & <br className="hidden md:block" /> Counting</p>
+                                <h3 className="text-[#6B2CEC] text-xl md:text-3xl 2xl:text-5xl ml-auto font-bold tracking-tighter">$3.21M</h3>
                             </motion.div>
 
                             <motion.div
@@ -103,7 +155,7 @@ const ExpertiseSection = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="sm:col-span-2 lg:col-span-6 relative min-h-[240px] md:min-h-[360px] lg:min-h-[440px] border-r border-b border-white/10"
+                                className="sm:col-span-2 lg:col-span-6 relative min-h-[240px] bg-red-30 md:min-h-[360px] lg:min-h-[440px] "
                             >
                                 <Image
                                     src="/assets/expertiseimage3.png"
