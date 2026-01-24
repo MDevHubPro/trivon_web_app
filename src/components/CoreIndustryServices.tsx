@@ -53,7 +53,7 @@ export default function CoreIndustryServices() {
 
                     {/* Left Sticky Section */}
                     <div className="lg:w-1/3 relative">
-                        <div className="lg:sticky lg:top-32 flex flex-col justify-between  bg-yellow-50">
+                        <div className="lg:sticky lg:top-32 flex flex-col justify-between ">
                             <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
                                 <span className="block text-gray-400">Our Core</span>
                                 <span className="block text-gray-400">Industry</span>
@@ -61,7 +61,7 @@ export default function CoreIndustryServices() {
                             </h2>
 
 
-                            <div className='bg-red-300'>
+                            <div className='mt-5'>
                                 <button className="group relative inline-flex items-center gap-2 bg-[#8B5CF6] text-white pl-6 pr-2 py-2 rounded-full overflow-hidden transition-all hover:pr-6">
                                     <span className="text-sm font-medium z-10">Let's Connect</span>
                                     <div className="bg-white rounded-full p-2 transition-transform group-hover:translate-x-1">
