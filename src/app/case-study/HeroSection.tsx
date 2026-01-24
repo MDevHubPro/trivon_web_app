@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Image from 'next/image';
 const HeroSection = () => {
     return (
-        <main className="min-h-screen  text-white ">
+        <main className="  text-white ">
 
 
 
@@ -13,8 +13,8 @@ const HeroSection = () => {
 
                 <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-2.png")] bg-cover bg-center bg-no-repeat'></div>
 
-                <div className='absolute z-[0] bottom-0  right-0 bg-[url("/assets/bg-right.png")]  flex items-center justify-center  w-2/3 h-[400px]  bg-cover bg-top bg-no-repeat'>
-                    <div className="hidden px-12  h-full md:flex items-end justify-end w-2/3 z-[5] relative ">
+                <div className='absolute z-[0]  bottom-0  right-0 bg-[url("/assets/bg-right.png")] hidden md:flex items-center justify-center w-2/3 aspect-[2.68/1] top-1/4 bg-cover bg-center bg-no-repeat'>
+                    <div className="hidden px-12  h-full md:flex items-end justify-end w-full z-[5] relative ">
                         <div className="w-full max-w-xl mb-20 relative">
                             <div className="w-full rounded-2xl p-[2px]  ">
 

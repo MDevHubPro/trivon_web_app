@@ -87,9 +87,8 @@ export default function CaseStudyPage() {
   const [selectedCategory, setSelectedCategory] = useState('Legal Analysis');
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-purple-500/30">
 
-
+    <>
       <HeroSection />
 
       {/* Hero Section */}
@@ -298,6 +297,5 @@ export default function CaseStudyPage() {
       <FAQ />
       <ContactFormSection />
       <Footer />
-    </main >
-  );
+    </>);
 }

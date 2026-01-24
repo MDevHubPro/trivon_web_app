@@ -10,10 +10,14 @@ import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
 import Herosection from './Herosection';
 import CoreIndustryServices from '@/components/CoreIndustryServices';
+import Maincontent from './maincontent';
+
 export default function IndustriesPage() {
     return (
         <main className="min-h-screen bg-black text-white">
-            <Herosection />
+            <Herosection >
+                <Maincontent />
+            </Herosection>
             <div className="pt-20">
                 {/* <IndustriesGrid /> */}
                 <CoreIndustryServices />

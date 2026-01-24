@@ -10,18 +10,18 @@ export default function TrivonHero() {
     ];
 
     return (
-        <div className='relative h-screen w-full '>
+        <div className='relative h-[619px] w-full bg-cover bg-center bg-no-repeat'>
             <Header />
             {/* 1. Hero Section */}
-            <div className='md:block hidden absolute z-[0] h-[80%] top-6 inset-0 bg-[url("/assets/bg-image.png")] bg-cover bg-center bg-no-repeat'></div>
+            <div className='md:block hidden absolute z-[0] h-full top-6 inset-0 bg-[url("/assets/bg-image.png")] bg-cover bg-center bg-no-repeat'></div>
 
-            <div className='h-full w-full absolute z-[0]  inset-0 bg-[url("/assets/bg-2.png")] bg-cover bg-center bg-no-repeat'></div>
-            <div className="relative min-h-screen  flex flex-col items-center justify-center px-4 overflow-hidden">
+            <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-2.png")] bg-cover bg-center bg-no-repeat'></div>
+            <div className="relative h-full w-full  flex flex-col items-center justify-center px-4 overflow-hidden">
                 {/* Background - we'll keep it simple for now */}
                 <div className="absolute inset-0 "></div>
 
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-                    <div className="flex flex-col justify-between min-h-[90vh]">
+                    <div className="flex flex-col justify-between ">
 
                         {/* Top Section - Heading and Description */}
                         <div className="flex-1 flex flex-col justify-center items-center text-center pt-8 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20">

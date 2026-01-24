@@ -2,11 +2,8 @@
 
 import { motion } from 'framer-motion';
 
-const brands = [
-    'winikon', 'temenos', 'SOFTWARE GROUP', 'winikon', 'Abler', 'avanza', 'temenos'
-];
 
-export default function BrandMarquee() {
+export default function BrandMarquee({ brands }: { brands: string[] }) {
     return (
         <section className="bg-black py-12 border-b border-gray-900 overflow-hidden relative z-20">
             <div className="flex whitespace-nowrap">

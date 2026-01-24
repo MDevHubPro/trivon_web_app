@@ -28,7 +28,7 @@ export default function Header() {
             </div>
           </button>
         </div>
-        <div className=" pl-6 pr-2 py-2 flex items-center gap-8 shadow-2xl md:w-full pointer-events-auto">
+        <div className=" pl-6 pr-2 pt-8 flex items-center gap-8 shadow-2xl md:w-full pointer-events-auto">
 
           {/* Logo */}
           {/* <Link href="/" className="flex items-center gap-2 mr-4">
