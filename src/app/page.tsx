@@ -12,16 +12,21 @@ import Testimonials from '@/components/Testimonials';
 import Web3Section from '@/components/Web3Section';
 import BrandMarquee from '@/components/BrandMarquee';
 import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <Header />
+    <main className="min-h-screen py-4 bg-black text-white">
 
-      {/* 1. Hero Section */}
-      <HomeHero />
+      <div className='relative bg-[url("/assets/bg.png")] h-screen w-full bg-cover bg-center bg-no-repeat'>
+        <Header />
+        {/* 1. Hero Section */}
 
-      {/* 1.5 Brand Marquee */}
+        <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-2.png")] bg-cover bg-center bg-no-repeat'></div>
+        <div className='absolute z-[0] top-0 bottom-0 right-0 w-2/3 h-full bg-[url("/assets/bg-3.png")] bg-cover bg-top bg-no-repeat'></div>
+
+        <HomeHero />
+      </div>
       <BrandMarquee />
 
       {/* 2. About Us Section */}

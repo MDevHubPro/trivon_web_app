@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,14 +13,24 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none md:pointer-events-auto">
-
-        <div className="bg-[#0b0b10]/90 backdrop-blur-md border border-[#1f1f26] rounded-full pl-6 pr-2 py-2 flex items-center gap-8 shadow-2xl pointer-events-auto">
+        <div className='absolute z-[10] top-4 left-10 '>
+          <Image src={'/assets/headerlogo.png'} alt="bg-2" width={150} height={150} />
+        </div>
+        <div className="absolute z-[10] top-4 right-6">
+          <button className="flex items-center gap-2 rounded-full px-6 py-2 bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]">
+            Request Quote
+            <div className='bg-white rounded-full p-2'>
+              <Image src="/assets/arrow.svg" alt="arrow" width={10} height={10} />
+            </div>
+          </button>
+        </div>
+        <div className=" pl-6 pr-2 py-2 flex items-center gap-8 shadow-2xl pointer-events-auto">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 mr-4">
+          {/* <Link href="/" className="flex items-center gap-2 mr-4">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center font-bold text-white">T</div>
             <span className="text-white font-bold hidden md:block">TRIVON</span>
-          </Link>
+          </Link> */}
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
@@ -31,10 +42,9 @@ export default function Header() {
                 <Link
                   key={item}
                   href={path}
-                  className={`text-[10px] font-medium px-4 py-2 rounded-full transition-all ${isActive
-                      ? 'bg-[#1a1a24] text-white border border-gray-700'
-                      : 'text-gray-500 hover:text-white hover:bg-white/5'
-                    }`}
+                  className={`text-sm font-medium px-4 py-2 transition-all ${isActive
+                    ? ''
+                    : 'bg-transparent group-hover:bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]'}`}
                 >
                   {item}
                 </Link>
@@ -42,9 +52,9 @@ export default function Header() {
             })}
             <Link
               href="/contact"
-              className={`text-[10px] font-medium px-4 py-2 rounded-full transition-all ${pathname === '/contact'
-                  ? 'bg-[#1a1a24] text-white border border-gray-700'
-                  : 'text-gray-500 hover:text-white hover:bg-white/5'
+              className={`text-sm font-medium px-4 py-2 rounded-full transition-all ${pathname === '/contact'
+                ? 'bg-[#1a1a24] text-white border border-gray-700'
+                : 'text-gray-500 hover:text-white hover:bg-white/5'
                 }`}
             >
               Contact Us
@@ -66,10 +76,10 @@ export default function Header() {
           </button>
 
           {/* CTA Button (Hidden on extremely small screens if needed, but keeping for now) */}
-          <Link href="/contact" className="hidden sm:flex bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white text-xs font-bold px-6 py-3 rounded-full items-center gap-2 hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all">
+          {/* <Link href="/contact" className="hidden sm:flex bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white text-xs font-bold px-6 py-3 rounded-full items-center gap-2 hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all">
             Request Quote
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </Link>
+          </Link> */}
         </div>
       </header>
 
