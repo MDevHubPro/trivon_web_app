@@ -9,7 +9,7 @@ import ContactFormSection from '@/components/ContactFormSection';
 import Footer from '@/components/Footer';
 import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 import Image from 'next/image';
-
+import HeroSection from './HeroSection';
 const categories = ['Legal Analysis', 'Market Analysis', 'Virtual Assets', 'Banking', 'NBA', 'Animated'];
 
 const caseStudies = [
@@ -88,60 +88,15 @@ export default function CaseStudyPage() {
 
   return (
     <main className="min-h-screen bg-black text-white selection:bg-purple-500/30">
-      <Header />
+
+
+      <HeroSection />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-black relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-            <div className="max-w-2xl">
-              <div className="flex items-start gap-4 mb-6">
-                <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-                  Case Studies
-                </h1>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="gray" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mt-2 text-gray-500">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-              <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
-                Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering.
-              </p>
-            </div>
 
-            {/* Abstract Grid/Globe Graphic on Right */}
-            <div className="hidden md:block w-96 h-96 relative opacity-20">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
-              {/* Placeholder for the grid globe effect */}
-              <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_60s_linear_infinite]">
-                <circle cx="100" cy="100" r="90" stroke="currentColor" strokeWidth="0.5" fill="none" className="text-gray-500" />
-                <path d="M10,100 Q100,50 190,100" stroke="currentColor" strokeWidth="0.5" fill="none" className="text-gray-500" />
-                <path d="M10,100 Q100,150 190,100" stroke="currentColor" strokeWidth="0.5" fill="none" className="text-gray-500" />
-                <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.5" fill="none" className="text-gray-500" />
-                <ellipse cx="100" cy="100" rx="40" ry="90" stroke="currentColor" strokeWidth="0.5" fill="none" className="text-gray-500" />
-              </svg>
-            </div>
-          </div>
 
-          {/* Search Bar */}
-          <div className="w-full max-w-sm mb-20">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search here..."
-                className="w-full bg-[#111] border border-gray-800 rounded-full py-3 px-6 text-gray-300 focus:outline-none focus:border-purple-500 transition-colors"
-              />
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </div>
-
-              {/* Abstract Grid/Globe Graphic on Right */}
-
-            </div>
-          </div>
 
           {/* Featured Resources Section */}
           <div className="mb-24 ">
