@@ -11,8 +11,8 @@ import PricingSection from '@/components/PricingSection';
 import Testimonials from '@/components/Testimonials';
 import Web3Section from '@/components/Web3Section';
 import BrandMarquee from '@/components/BrandMarquee';
-import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 import Image from 'next/image';
+import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 
 export default function Home() {
   return (
