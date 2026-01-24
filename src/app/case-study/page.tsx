@@ -7,6 +7,8 @@ import ClientCarousel from '@/components/ClientCarousel';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
 import Footer from '@/components/Footer';
+import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
+import Image from 'next/image';
 
 const categories = ['Legal Analysis', 'Market Analysis', 'Virtual Assets', 'Banking', 'NBA', 'Animated'];
 
@@ -120,41 +122,42 @@ export default function CaseStudyPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="col-span-1 lg:col-span-2 relative group cursor-pointer overflow-hidden rounded-2xl md:min-h-[400px]"
+                className="col-span-1 border border-gray-800 lg:col-span-2 relative group cursor-pointer overflow-hidden rounded-2xl md:min-h-[400px] flex flex-col md:flex-row"
               >
-                {/* Background Image/Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
-                  {/* Isometric/3D Elements Placeholder */}
-                  <div className="absolute right-0 top-0 h-full w-2/3 opacity-80">
-                    <img
-                      src="https://placehold.co/800x600/1a1a2e/FFF?text=Memecoins+Visual"
-                      alt="Featured"
-                      className="w-full h-full object-cover mix-blend-overlay"
-                    />
-                  </div>
+                {/* Left Side - Image */}
+                <div className="relative w-full md:w-4/5 h-64 md:h-auto bg-[#1a1a2e]">
+                  <Image
+                    src="/assets/memecoin.png"
+                    alt="Memecoins"
+                    fill
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-black/10" />
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent"></div>
+                {/* Right Side - Purple Content */}
+                <div className="relative w-full md:w-[30%] bg-[#6D28D9] p-8 flex flex-col justify-center">
 
-                <div className="absolute bottom-0 left-0 p-8 w-full">
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
-                        Memecoins:<br />
-                        Impact on Emerging<br />
-                        Crypto Markets
-                      </h3>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-md p-2 rounded-full hidden md:block group-hover:bg-purple-500 transition-colors">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
-                      </svg>
-                    </div>
+                  {/* Top Right Design Element/Logo */}
+                  <div className="absolute top-6 right-6">
+                    <Image
+                      src="/assets/gamefiicon.png"
+                      alt="Memecoins"
+                      width={40}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
-                  <div className="flex items-center gap-4 mt-6 text-sm text-gray-300">
-                    <span>• 1 Min Read</span>
-                    <span>• April 18, 2023</span>
+
+                  <div className="mt-16 mb-2 space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                      Memecoins: Impact on Emerging Crypto Markets
+                    </h3>
+
+                  </div>
+
+                  <div className="flex items-center gap-3 text-[12px] font-medium text-white/80 mt-auto">
+                    <span>• 5 Min Read</span>
+                    <span>• April 16, 2025</span>
                   </div>
                 </div>
               </motion.div>
@@ -180,6 +183,7 @@ export default function CaseStudyPage() {
               </div>
             </div>
           </div>
+          {/* <FeaturedResourcesSection /> */}
 
           {/* Filters */}
           <div className="mb-12 overflow-x-auto pb-4">
@@ -189,8 +193,8 @@ export default function CaseStudyPage() {
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-6 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all border ${selectedCategory === cat
-                      ? 'bg-purple-600 border-purple-600 text-white'
-                      : 'bg-[#111] border-gray-800 text-gray-400 hover:border-purple-500/50 hover:text-white'
+                    ? 'bg-purple-600 border-purple-600 text-white'
+                    : 'bg-[#111] border-gray-800 text-gray-400 hover:border-purple-500/50 hover:text-white'
                     }`}
                 >
                   {cat}
@@ -211,62 +215,47 @@ export default function CaseStudyPage() {
               >
                 {/* Image/Thumbnail Area */}
                 <div className="aspect-video bg-[#0f0f13] border border-gray-800 rounded-2xl p-8 relative overflow-hidden mb-6 group-hover:border-purple-500/30 transition-colors">
-                  <div className="absolute top-4 left-4">
-                    <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
-                      GameFi:
-                    </span>
-                    <p className="text-xs text-gray-500 mt-1">Future of Gaming or<br />Short-lived Gimmick?</p>
-                  </div>
-
                   {/* 3D Isometric Illustration Placeholder */}
-                  <div className="absolute right-0 bottom-0 w-2/3 h-2/3">
-                    <div className="w-full h-full relative">
-                      {/* Just abstract shapes for 'GameFi' look */}
-                      <div className="absolute bottom-4 right-4 w-20 h-20 bg-purple-600/20 rounded-full blur-xl"></div>
-                      <div className="absolute bottom-8 right-12 w-10 h-10 bg-blue-500/40 rounded-lg transform rotate-45"></div>
-                      <div className="absolute bottom-16 right-24 w-8 h-16 bg-pink-500/40 rounded-full"></div>
-                      {/* Grid Floor */}
-                      <div className="absolute bottom-0 right-0 w-full h-24 bg-[linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] [transform:perspective(500px)_rotateX(60deg)]"></div>
-                    </div>
-                  </div>
+                  <div className="absolute right-0 bottom-0 w-full h-full ">
 
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end border-t border-white/5 pt-4">
-                    <span className="px-3 py-1 bg-[#1a1a1a] rounded-full text-xs text-purple-400 border border-purple-500/30">
-                      {study.tag}
-                    </span>
-                    <div className="text-xs text-gray-500 flex gap-3">
-                      <span>• {study.readTime}</span>
-                      <span>• {study.date}</span>
-                    </div>
+                    <Image src="/assets/gamefi.png" alt="GameFi" fill className="object-cover w-full h-full" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div>
+                < div >
                   <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
                     {study.title}
                   </h3>
-                  <button className="bg-[#8B5CF6] text-white px-6 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#7C3AED] transition-colors group">
-                    Read View
-                    <span className="bg-white/20 rounded-full p-0.5">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
-                      </svg>
-                    </span>
-                  </button>
+                  <div className=" flex justify-between items-center ">
+
+
+                    <button className="bg-[#8B5CF6] text-white px-6 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#7C3AED] transition-colors group">
+                      Read View
+                      <span className="bg-white/20 rounded-full p-0.5">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </span>
+                    </button>
+                    <div className="text-sm text-white flex items-center md:flex-row flex-col gap-3">
+                      <span>• {study.readTime}</span>
+                      <span>• {study.date}</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
         </div>
-      </section>
+      </section >
 
       <ClientCarousel />
       <FAQ />
       <ContactFormSection />
       <Footer />
-    </main>
+    </main >
   );
 }
