@@ -12,7 +12,7 @@ export default function Header() {
   // New Design: Floating Pill Navbar
   return (
     <>
-      <header className="fixed top-6 left-0 right-0 z-50 flex justify-between px-4 pointer-events-none md:pointer-events-auto">
+      <header className="relative top-6 left-0 right-0 z-50 flex justify-between px-4 pointer-events-none md:pointer-events-auto">
         <div className='md:block hidden absolute z-[10] top-4 left-10 '>
           <Image src={'/assets/headerlogo.png'} alt="bg-2" width={140} height={140} />
         </div>
