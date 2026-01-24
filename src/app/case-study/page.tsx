@@ -28,7 +28,7 @@ const caseStudies = [
     readTime: '3 Min Read',
     date: 'April 18, 2023',
     title: 'Memecoins: impact on Emerging Crypto Markets',
-    image: 'GameFi',
+    image: '/assets/gamefi.png',
     theme: 'blue'
   },
   {
@@ -37,7 +37,7 @@ const caseStudies = [
     readTime: '5 Min Read',
     date: 'April 18, 2023',
     title: 'Memecoins: impact on Emerging Crypto Markets',
-    image: 'GameFi',
+    image: '/assets/orderfi.png',
     theme: 'purple'
   },
   {
@@ -46,10 +46,42 @@ const caseStudies = [
     readTime: '2 Min Read',
     date: 'April 16, 2023',
     title: 'Memecoins: impact on Emerging Crypto Markets',
-    image: 'GameFi',
+    image: '/assets/beyondfi.png',
     theme: 'blue'
   }
 ];
+
+
+const resources = [
+  {
+    id: 1,
+    title: "Memecoins: Impact on Emerging Crypto Markets",
+    readTime: "1 Min Read",
+    date: "April 18, 2023",
+    image: "/assets/gamefi.png",
+    category: "Crypto",
+    tags: ["memecoins", "crypto", "markets"]
+  },
+  {
+    id: 2,
+    title: "Web3 Development: Building Decentralized Applications",
+    readTime: "5 Min Read",
+    date: "May 22, 2023",
+    image: "/assets/orderfi.png",
+    category: "Web3",
+    tags: ["web3", "dapps", "blockchain"]
+  },
+  {
+    id: 3,
+    title: "NFT Marketplace Trends in 2024",
+    readTime: "3 Min Read",
+    date: "January 15, 2024",
+    image: "/assets/beyondfi.png",
+    category: "NFT",
+    tags: ["nft", "marketplace", "trends"]
+  }
+
+]
 
 export default function CaseStudyPage() {
   const [selectedCategory, setSelectedCategory] = useState('Legal Analysis');
@@ -109,10 +141,10 @@ export default function CaseStudyPage() {
           </div>
 
           {/* Featured Resources Section */}
-          <div className="mb-24">
-            <div className="flex justify-between items-end mb-8">
-              <h2 className="text-4xl font-bold text-white">Featured Resource's</h2>
-              <p className="text-xs text-gray-500 max-w-md text-right hidden md:block">
+          <div className="mb-24 ">
+            <div className="flex md:flex-row flex-col justify-between items-end  mb-8">
+              <h2 className="text-[40px] md:text-[70px] font-bold text-white">Featured Resource's</h2>
+              <p className="text-[16px] md:text-[21px] text-gray-500 max-w-2xl text-start hidden md:block">
                 Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering.
               </p>
             </div>
@@ -136,7 +168,7 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Right Side - Purple Content */}
-                <div className="relative w-full md:w-[30%] bg-[#6D28D9] p-8 flex flex-col justify-center">
+                <div className="relative w-full md:w-[30%] bg-[#6D28D9]  p-8 flex flex-col justify-center">
 
                   {/* Top Right Design Element/Logo */}
                   <div className="absolute top-6 right-6">
@@ -144,6 +176,7 @@ export default function CaseStudyPage() {
                       src="/assets/gamefiicon.png"
                       alt="Memecoins"
                       width={40}
+                      height={40}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -164,18 +197,40 @@ export default function CaseStudyPage() {
 
               {/* Sidebar List */}
               <div className="col-span-1 space-y-4">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="bg-[#111] p-4 rounded-xl border border-gray-800 hover:border-purple-500/50 transition cursor-pointer flex gap-4 h-[125px]">
-                    <div className="w-1/3 bg-gray-800 rounded-lg overflow-hidden relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-blue-900/40"></div>
+                {resources.map((i) => (
+                  <div key={i.id} className="rounded-xl transition cursor-pointer flex gap-4 h-[125px]">
+                    <div className="w-2/3   overflow-hidden relative">
+                      <Image
+                        src={i.image}
+                        alt="Memecoins"
+                        fill
+                        className="object-contain "
+                      />
                     </div>
-                    <div className="w-2/3 flex flex-col justify-center">
+                    <div className="w-2/3 flex flex-col h-full justify-between">
+                      <div className="relative inline-flex items-start justify-start rounded-full p-[1.5px] ">
+                        {/* Inner badge */}
+                        <div className="relative rounded-full p-[1px] 
+  bg-gradient-to-br from-[#6B2CEC33] to-[#A156F733]">
+
+                          <div
+                            className="flex items-center gap-2 rounded-full px-6 py-2
+    bg-gradient-to-br from-[#6B2CEC] to-[#A156F7]
+    border border-white/50"
+                          >
+                            <span className="text-sm font-medium tracking-wide text-white">
+                              Education
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
                       <h4 className="text-sm font-semibold text-white mb-2 line-clamp-2">
-                        Memecoins: Impact on Emerging Crypto Markets
+                        {i.title}
                       </h4>
                       <div className="flex items-center gap-2 text-[10px] text-gray-500">
-                        <span>• 1 Min Read</span>
-                        <span>• April 18, 2023</span>
+                        <span>• {i.readTime}</span>
+                        <span>• {i.date}</span>
                       </div>
                     </div>
                   </div>
@@ -223,14 +278,41 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Content */}
-                < div >
+                < div className='flex flex-col gap-4' >
+
+                  <div className="w-full flex items-center   h-full justify-between">
+                    <div className="relative inline-flex items-start justify-start rounded-full p-[1.5px] ">
+                      {/* Inner badge */}
+                      <div className="relative rounded-full p-[1px] 
+  bg-gradient-to-br from-[#6B2CEC33] to-[#A156F733]">
+
+                        <div
+                          className="flex items-center gap-2 rounded-full px-6 py-2
+    bg-gradient-to-br from-[#6B2CEC] to-[#A156F7]
+    border border-white/50"
+                        >
+                          <span className="text-sm font-medium tracking-wide text-white">
+                            Education
+                          </span>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <div className="text-sm text-white flex items-center flex-row gap-3 mt-2">
+                      <span>• {study.readTime}</span>
+                      <span>• {study.date}</span>
+                    </div>
+                  </div>
+
+
                   <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
                     {study.title}
                   </h3>
-                  <div className=" flex justify-between items-center ">
 
-
-                    <button className="bg-[#8B5CF6] text-white px-6 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#7C3AED] transition-colors group">
+                  <div className="flex w-auto">
+                    <button className="bg-[#8B5CF6] text-white px-6 py-2.5 rounded-full w-full md:w-auto text-sm font-medium flex items-center gap-2 hover:bg-[#7C3AED] transition-colors group">
                       Read View
                       <span className="bg-white/20 rounded-full p-0.5">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -239,11 +321,9 @@ export default function CaseStudyPage() {
                         </svg>
                       </span>
                     </button>
-                    <div className="text-sm text-white flex items-center md:flex-row flex-col gap-3">
-                      <span>• {study.readTime}</span>
-                      <span>• {study.date}</span>
-                    </div>
+
                   </div>
+
                 </div>
               </motion.div>
             ))}
