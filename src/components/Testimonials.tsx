@@ -132,8 +132,21 @@ const TestimonialColumn = ({ testimonial, isProfileTop }: { testimonial: Testimo
 export default function Testimonials() {
   const [itemsToShow, setItemsToShow] = useState(4);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Create a large array for infinite-like scrolling
+  // We duplicate the testimonials enough times to scroll smoothly
+  const REPEAT_COUNT = 10;
+  const allTestimonials = Array(REPEAT_COUNT).fill(testimonials).flat();
+
+  // Start in the middle to allow scrolling both ways initially (though we mostly scroll right)
+  const START_INDEX = (allTestimonials.length / 2) - ((allTestimonials.length / 2) % testimonials.length);
 
   useEffect(() => {
+    setMounted(true);
+    setCurrentIndex(START_INDEX);
+
     const handleResize = () => {
       if (window.innerWidth < 640) setItemsToShow(1);
       else if (window.innerWidth < 1024) setItemsToShow(2);
@@ -144,33 +157,34 @@ export default function Testimonials() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const totalItems = testimonials.length;
-
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalItems);
+    setCurrentIndex((prev) => {
+      // If we reach near the end, snap back? 
+      // For now, just increment. If we want true infinite, we'd handle resets, 
+      // but with REPEAT_COUNT=10 it's plenty for a session.
+      // Or we can simple wrap logic like ClientCarousel if preferred.
+      if (prev >= allTestimonials.length - itemsToShow) return START_INDEX;
+      return prev + 1;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
+    setCurrentIndex((prev) => {
+      if (prev <= 0) return START_INDEX;
+      return prev - 1;
+    });
   };
 
   // Auto carousel with loop
   useEffect(() => {
+    if (isHovered) return;
     const timer = setInterval(() => {
       nextSlide();
     }, 3000);
     return () => clearInterval(timer);
-  }, [totalItems]); // Removed itemsToShow dependency to avoid reset on resize
+  }, [itemsToShow, isHovered, mounted]);
 
-  const getVisibleItems = () => {
-    const items = [];
-    for (let i = 0; i < itemsToShow; i++) {
-      items.push(testimonials[(currentIndex + i) % totalItems]);
-    }
-    return items;
-  };
-
-  const visibleItems = getVisibleItems();
+  if (!mounted) return <section className="py-24 bg-black" />;
 
   return (
     <section className="py-24 bg-black overflow-hidden relative">
@@ -194,7 +208,7 @@ export default function Testimonials() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <button
               onClick={prevSlide}
               className="w-14 h-14 rounded-full bg-[#111111] text-white border border-gray-800 flex items-center justify-center hover:bg-[#8B5CF6] hover:border-[#8B5CF6] transition-all duration-300 group"
@@ -213,41 +227,53 @@ export default function Testimonials() {
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
+          </div> */}
+
+          <div className="flex gap-4">
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 rounded-lg bg-[#111] border border-gray-800 text-white flex items-center justify-center hover:bg-gray-800 transition active:scale-95 z-20 group"
+            >
+              <svg className="group-hover:text-purple-500 transition-colors" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 rounded-lg bg-[#111] border border-gray-800 text-white flex items-center justify-center hover:bg-gray-800 transition active:scale-95 z-20 group"
+            >
+              <svg className="group-hover:text-purple-500 transition-colors" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
           </div>
         </div>
 
-        {/* Carousel Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <AnimatePresence mode='popLayout'>
-            {visibleItems.map((testimonial, index) => {
-              // We must use a unique key that represents the POSITION in the grid + the CONTENT
-              // OR just the content ID if we want them to slide.
-              // To achieve "sliding left" effect for the whole row, items need to move.
-              // If we use index keys, items update in place (no slide).
-              // If we use ID keys, Item 2 moves from pos 1 -> pos 0. This is the slide.
-              return (
-                <motion.div
-                  key={testimonial.id}
-                  layout
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20, position: 'absolute', zIndex: -1 }} // Absolute exit to avoid layout thrashing
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="w-full"
-                >
-                  <TestimonialColumn
-                    testimonial={testimonial}
-                    // Fixed alternating pattern: First column always Profile Top, Second always Review Top, etc.
-                    // This creates a static grid structure where content flows through it.
-                    // Or do we want the style to travel with the card?
-                    // "make design exactly like image" -> usually staggered like masonry.
-                    // If we want the structure to be 1: Up, 2: Down, 3: Up... strictly by column:
-                    isProfileTop={index % 2 === 0}
-                  />
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+        {/* Carousel Slider */}
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <motion.div
+            className="flex"
+            style={{
+              width: `${(allTestimonials.length * 100) / itemsToShow}%`
+            }}
+            animate={{
+              x: `-${(currentIndex * 100) / allTestimonials.length}%`
+            }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          >
+            {allTestimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="px-3"
+                style={{ width: `${100 / allTestimonials.length}%` }}
+              >
+                <TestimonialColumn
+                  testimonial={testimonial}
+                  isProfileTop={index % 2 === 0}
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
 
       </div>

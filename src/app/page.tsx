@@ -13,6 +13,7 @@ import Web3Section from '@/components/Web3Section';
 import BrandMarquee from '@/components/BrandMarquee';
 import Image from 'next/image';
 import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
+
 export default function Home() {
   return (
     <main className="min-h-screen py-4 bg-black text-white">
