@@ -12,19 +12,23 @@ export default function Header() {
   // New Design: Floating Pill Navbar
   return (
     <>
-      <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none md:pointer-events-auto">
-        <div className='absolute z-[10] top-4 left-10 '>
-          <Image src={'/assets/headerlogo.png'} alt="bg-2" width={150} height={150} />
+      <header className="fixed top-6 left-0 right-0 z-50 flex justify-between px-4 pointer-events-none md:pointer-events-auto">
+        <div className='md:block hidden absolute z-[10] top-4 left-10 '>
+          <Image src={'/assets/headerlogo.png'} alt="bg-2" width={140} height={140} />
         </div>
-        <div className="absolute z-[10] top-4 right-6">
-          <button className="flex items-center gap-2 rounded-full px-6 py-2 bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]">
+
+        <div className='md:hidden block z-[10] top-4 left-10 '>
+          <Image src={'/assets/headerlogo.png'} alt="bg-2" width={140} height={140} />
+        </div>
+        <div className=" md:flex hidden absolute z-[10] top-4 right-6">
+          <button className="flex items-center gap-2 text-sm rounded-full px-4 py-1 bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]">
             Request Quote
             <div className='bg-white rounded-full p-2'>
               <Image src="/assets/arrow.svg" alt="arrow" width={10} height={10} />
             </div>
           </button>
         </div>
-        <div className=" pl-6 pr-2 py-2 flex items-center gap-8 shadow-2xl pointer-events-auto">
+        <div className=" pl-6 pr-2 py-2 flex items-center gap-8 shadow-2xl md:w-full pointer-events-auto">
 
           {/* Logo */}
           {/* <Link href="/" className="flex items-center gap-2 mr-4">
@@ -33,7 +37,7 @@ export default function Header() {
           </Link> */}
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center justify-center gap-1 w-full">
             {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study'].map((item) => {
               const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
               const isActive = pathname === path;
@@ -104,7 +108,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-8 bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2"
+              className=" mt-8 bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white py-4 rounded-xl font-bold md:flex hidden justify-center items-center gap-2"
             >
               Request Quote
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
