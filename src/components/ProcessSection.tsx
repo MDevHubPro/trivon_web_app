@@ -27,7 +27,7 @@ const steps = [
 
 export default function ProcessSection() {
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
+        <section className="py-24 bg-black relative overflow-hidden ">
             {/* Container */}
             <div className="container mx-auto px-4 md:px-8 relative z-10">
 

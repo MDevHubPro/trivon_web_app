@@ -101,10 +101,6 @@ const categories = ['Logo Design', 'Website Design', 'E-Commerce', 'Branding', '
 export default function PricingSection() {
     const [activeCategory, setActiveCategory] = useState('Logo Design');
 
-    // Logic to show 5 cards always for demo to match "3 top, 2 bottom" layout requested, 
-    // or filter if we actually had distinctive data. 
-    // For visual "exact replica", I'll ensuring we calculate the 3+2 layout.
-    // We'll just show the same 5 packages for every category to maintain the visual layout requested.
     const displayPackages = packages;
 
     return (
@@ -118,8 +114,8 @@ export default function PricingSection() {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 border ${activeCategory === cat
-                                    ? 'bg-[#1e102e] border-[#8B5CF6] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
-                                    : 'bg-[#111] border-[#1f1f1f] text-gray-500 hover:border-gray-700 hover:text-gray-300'
+                                ? 'bg-[#1e102e] border-[#8B5CF6] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+                                : 'bg-[#111] border-[#1f1f1f] text-gray-500 hover:border-gray-700 hover:text-gray-300'
                                 }`}
                         >
                             {cat}
