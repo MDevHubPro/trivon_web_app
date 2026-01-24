@@ -8,15 +8,15 @@ import ClientCarousel from '@/components/ClientCarousel';
 import ProcessSection from '@/components/ProcessSection';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
-
+import HeroSection from '../about-us/Herosection';
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-black text-white">
-          
-          
-          
-          
-            <Header />
+
+
+
+
+            <HeroSection heading_one={"CUSTOM DEVELOPMENT SERVICES"} text={"We specialize in creating innovative, scalable, and secure decentralized applications that redefine the future of digital interactions."} main_heading={"*/Web Dev"} />
 
             {/* Process Section */}
             <ProcessSection />
