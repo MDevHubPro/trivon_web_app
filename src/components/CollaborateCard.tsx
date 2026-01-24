@@ -12,7 +12,7 @@ export default function CollaborateCard() {
                     preserveAspectRatio="none"
                 >
                     <path
-                        d="M0 210 C 1200 80, 600 200, 1200 120"
+                        d="M0 210 C 1200 80, 600 200, 1200 200"
                         stroke="rgba(255,255,255,0.35)"
                         strokeWidth="2"
                         fill="none"
