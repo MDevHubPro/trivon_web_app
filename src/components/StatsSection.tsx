@@ -3,10 +3,10 @@
 export default function StatsSection() {
     return (
         <section className="py-24 bg-black">
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+            <div className="container mx-auto px-4 md:px-8  ">
 
                 {/* Header */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gray-900 pb-12">
+                <div className="flex flex-col md:flex-row justify-between items-start mb-20 pb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-white max-w-2xl leading-tight">
                         Our work speaks through<br />
                         numbers. Here's What we've<br />
@@ -37,17 +37,17 @@ export default function StatsSection() {
                     ].map((stat, i) => (
                         <div key={i} className="group">
                             {/* Number */}
-                            <div className={`text-5xl font-bold mb-4 ${stat.color} drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]`}>
+                            <div className={`text-[70px] font-bold mb-4 ${stat.color} drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]`}>
                                 {stat.val}
                             </div>
 
                             {/* Label with underline separator */}
-                            <h3 className="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-4 group-hover:border-purple-500 transition-colors">
+                            <h3 className="text-4xl font-bold text-white mb-6 border-t pt-4 border-gray-800 pb-4 group-hover:border-purple-500 transition-colors">
                                 {stat.label}
                             </h3>
 
                             {/* Description Text */}
-                            <p className="text-gray-500 text-[10px] leading-relaxed text-justify">
+                            <p className="text-gray-500 text-[24px] text-justify">
                                 Trivon has secured over $3.2 billion in Total Value Locked across multiple blockchain ecosystems. Our robust audit methodologies and security-first mindset ensure that protocols remain resilient, enabling projects to grow confidently in an increasingly complex Web3 landscape.
                             </p>
                         </div>

@@ -8,11 +8,11 @@ import WorkTogether from '@/components/WorkTogether';
 import TechnologyStack from '@/components/TechnologyStack';
 import HomeCaseStudy from '@/components/HomeCaseStudy';
 import PricingSection from '@/components/PricingSection';
-import ProcessSection from '@/components/ProcessSection';
+import Testimonials from '@/components/Testimonials';
 import Web3Section from '@/components/Web3Section';
 import BrandMarquee from '@/components/BrandMarquee';
 import Image from 'next/image';
-
+import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 export default function Home() {
   return (
     <main className="min-h-screen py-4 bg-black text-white">
@@ -43,11 +43,14 @@ export default function Home() {
       {/* 6. Pricing Section */}
       <PricingSection />
 
-      {/* 7. Process / Testimonials (Using ProcessSection as it matches the 'When I joined...' text and arrows in the image) */}
-      <ProcessSection />
+      {/* 7. Testimonials */}
+      <Testimonials />
 
       {/* 8. Web 3.0 Section */}
       <Web3Section />
+
+      {/* 9. Featured Resources */}
+      <FeaturedResourcesSection />
 
       <Footer />
     </main>
