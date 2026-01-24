@@ -8,6 +8,7 @@ import ClientCarousel from '@/components/ClientCarousel';
 import ProcessSection from '@/components/ProcessSection';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
+import CoreIndustryServices from '@/components/CoreIndustryServices';
 
 
 const packages = [
@@ -71,14 +72,15 @@ const packages = [
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-black text-white">
-          
-          
-          
-          
+
+
+
+
             <Header />
 
             {/* Process Section */}
             <ProcessSection />
+
 
             <div className="container mx-auto px-4 md:px-8 relative z-10">
                 <h1 className="text-center text-[70px] font-semibold leading-tight md:text-[70px] mb-8">
