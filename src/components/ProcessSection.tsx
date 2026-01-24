@@ -32,7 +32,7 @@ export default function ProcessSection() {
             <div className="container mx-auto px-4 md:px-8 relative z-10">
 
                 {/* Top Header Section */}
-                <div className="max-w-5xl mb-16">
+                <div className=" mb-16">
                     {/* Tag */}
                     <div className="inline-block bg-[linear-gradient(90deg,#00C6FF_0%,#0072FF_100%)] rounded-full px-4 py-1.5 mb-8">
                         <span className="text-white text-xs font-bold flex items-center gap-2">
@@ -51,11 +51,21 @@ export default function ProcessSection() {
                         We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
                     </p>
                 </div>
+            </div>
 
-                {/* Curved Divider Line */}
-                <div className="relative w-full h-24 mb-16 overflow-hidden pointer-events-none">
-                    <div className="absolute top-0 left-[-10%] right-[-10%] h-[1000px] border-t border-[#8B5CF6] rounded-[100%] opacity-50 shadow-[0_-5px_20px_rgba(139,92,246,0.3)]"></div>
+            {/* Curved Divider Line */}
+            {/* Curved Divider Line */}
+            <div className="relative w-screen bg-red-300 left-1/2 -translate-x-1/2 h-24 mb-16 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 left-[-20%] right-[-20%] h-[1000px] 
+        border-t border-[#8B5CF6] 
+        rounded-[100%] 
+        opacity-50 
+        shadow-[0_-5px_20px_rgba(139,92,246,0.3)]">
                 </div>
+            </div>
+
+
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
 
                 {/* Steps Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
@@ -118,6 +128,7 @@ export default function ProcessSection() {
                 </div>
 
             </div>
+
         </section>
     );
 }

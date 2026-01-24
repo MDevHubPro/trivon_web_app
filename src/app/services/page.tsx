@@ -88,7 +88,7 @@ export default function ServicesPage() {
 
 
             <div className="container mx-auto px-4 md:px-8 relative z-10">
-                <h1 className="text-center text-[70px] font-semibold leading-tight md:text-[70px] mb-8">
+                <h1 className="text-center  text-[70px] font-semibold leading-tight md:text-[70px] mb-8">
                     <span className="bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] bg-clip-text text-transparent">
                         Explore
                     </span>{" "}
