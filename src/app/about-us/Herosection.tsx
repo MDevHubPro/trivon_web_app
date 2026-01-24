@@ -61,7 +61,7 @@ const HeroSection = ({ heading_one, heading_two, text, main_heading }: any) => {
 
                             <div>
                                 <h2
-                                    className="md:text-[140px] text-[100px] font-medium mb-2 tracking-tighter pr-16"
+                                    className="md:text-[140px] text-[100px] text-nowrap font-medium mb-2 tracking-tighter pr-16"
                                     style={{
                                         background: "linear-gradient(90deg, #FFFFFF 0%, #000000 100%)",
                                         WebkitBackgroundClip: "text",
