@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PricingSection from '@/components/PricingSection';
-import ClientCarousel from '@/components/ClientCarousel';
 import ProcessSection from '@/components/ProcessSection';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
 import HeroSection from '../about-us/Herosection';
 import CoreIndustryServices from '@/components/CoreIndustryServices';
+import Testimonials from '@/components/Testimonials';
 
 
 const packages = [
@@ -153,7 +153,7 @@ export default function ServicesPage() {
             </div>
 
 
-            <ClientCarousel />
+            <Testimonials />
             <FAQ />
             <ContactFormSection />
             <Footer />

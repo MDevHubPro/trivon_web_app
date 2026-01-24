@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
-import ClientCarousel from '@/components/ClientCarousel';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
 import Footer from '@/components/Footer';
 import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 import Image from 'next/image';
 import HeroSection from './HeroSection';
+import Testimonials from '@/components/Testimonials';
 const categories = ['Legal Analysis', 'Market Analysis', 'Virtual Assets', 'Banking', 'NBA', 'Animated'];
 
 const caseStudies = [
@@ -294,7 +294,7 @@ export default function CaseStudyPage() {
 
 
 
-      <ClientCarousel />
+      <Testimonials />
       <FAQ />
       <ContactFormSection />
       <Footer />

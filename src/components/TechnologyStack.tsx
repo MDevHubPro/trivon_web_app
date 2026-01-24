@@ -53,11 +53,11 @@ export default function TechnologyStack() {
         <section className="py-24 bg-black">
             <div className="container mx-auto px-4 md:px-8">
 
-                <div className="mb-16">
-                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
+                <div className="mb-16 flex flex-col  gap-9">
+                    <h2 className="text-5xl md:text-[170px] font-bold text-white mb-4">
                         Technology <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">Stack</span>
                     </h2>
-                    <p className="text-gray-500 text-sm max-w-xl">
+                    <p className="text-gray-500 md:text-[20px] text-[14px] max-w-[70%]">
                         We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
                     </p>
                 </div>
@@ -71,8 +71,8 @@ export default function TechnologyStack() {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`text-left px-8 py-4 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden ${activeTab === tab
-                                        ? 'text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]'
-                                        : 'text-purple-400 hover:bg-white/5'
+                                    ? 'text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]'
+                                    : 'text-purple-400 hover:bg-white/5'
                                     }`}
                             >
                                 {activeTab === tab && (
