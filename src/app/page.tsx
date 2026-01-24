@@ -13,6 +13,8 @@ import Web3Section from '@/components/Web3Section';
 import BrandMarquee from '@/components/BrandMarquee';
 import Image from 'next/image';
 import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
+import CollaborateCard from '@/components/CollaborateCard';
+import FAQ from '@/components/FAQ';
 
 export default function Home() {
   const brands = [
@@ -54,14 +56,18 @@ export default function Home() {
       {/* 6. Pricing Section */}
       <PricingSection />
 
-      {/* 7. Testimonials */}
-      <Testimonials />
-
-      {/* 8. Web 3.0 Section */}
+      {/* 7. Web 3.0 Section */}
       <Web3Section />
 
-      {/* 9. Featured Resources */}
-      <FeaturedResourcesSection />
+      {/* 8. Testimonials */}
+      <Testimonials />
+
+      {/* 9. FAQ */}
+      <FAQ />
+
+
+      {/* 10. Collaborate Section */}
+      <CollaborateCard />
 
       <Footer />
     </main>

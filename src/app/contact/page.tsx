@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import ContactFormSection from '@/components/ContactFormSection';
-import ClientCarousel from '@/components/ClientCarousel';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import HeroSection from '../industries/Herosection';
+import Testimonials from '@/components/Testimonials';
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
@@ -42,7 +43,7 @@ export default function ContactPage() {
       <ContactFormSection />
 
       {/* Testimonials */}
-      <ClientCarousel />
+      <Testimonials />
 
       {/* FAQ */}
       <FAQ />

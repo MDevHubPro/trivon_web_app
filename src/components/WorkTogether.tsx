@@ -28,7 +28,7 @@ const baseServices = [
     {
         title: 'Shopify Website',
         desc: 'help you to build website company that is modern, user friendly, good CEO, and Clean design',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg',
+        icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM6onG0BTCip21uyKDKTTaMVp62LNJYTLV5A&s',
         visual: 'shopify',
         type: 'dark'
     }
@@ -156,7 +156,7 @@ export default function WorkTogether() {
                                             {/* Style the second word purple if 2 words, or logic for coloring */}
                                             {service.title.split(' ')[0]} <span className="text-[#8B5CF6]">{service.title.split(' ').slice(1).join(' ')}</span>
                                         </h3>
-                                        <p className="text-gray-500 text-xs leading-relaxed mb-8 h-12 line-clamp-3">
+                                        <p className="text-gray-500 text-xs leading-relaxed mb-8 h-16 line-clamp-3 pb-9">
                                             {service.desc}
                                         </p>
 

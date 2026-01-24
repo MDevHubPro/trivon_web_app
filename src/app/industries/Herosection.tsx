@@ -10,7 +10,7 @@ const HeroSection = ({ children }) => {
         <div className='relative  h-[619px] w-full '>
             <Header />
             {/* 1. Hero Section */}
-            <div className='md:block hidden absolute z-[0] h-full  top-6 right-0 bottom-0 left-0 bg-[url("/assets/bg-4.png")] bg-cover bg-center bg-no-repeat'></div>
+            <div className='md:block hidden absolute z-[0] h-full  top-4 right-0 bottom-0 left-0 bg-[url("/assets/bg-4.png")] bg-cover bg-center bg-no-repeat'></div>
 
             {/* <div className=' absolute z-[0]  inset-0 bg-[url("/assets/bg-4.png")] bg-contain bg-center bg-no-repeat'></div> */}
             <div className="relative h-[619px] w-full flex flex-col items-center gap-6 justify-center px-4 overflow-hidden">

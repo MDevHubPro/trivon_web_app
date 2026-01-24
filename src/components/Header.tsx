@@ -12,7 +12,7 @@ export default function Header() {
   // New Design: Floating Pill Navbar
   return (
     <>
-      <header className="relative top-6 left-0 right-0 z-50 flex justify-between px-4 pointer-events-none md:pointer-events-auto">
+      <header className="relative top-4 left-0 right-0 z-50 flex justify-between px-4 pointer-events-none md:pointer-events-auto">
         <div className='md:block hidden absolute z-[10] top-4 left-10 '>
           <Image src={'/assets/headerlogo.png'} alt="bg-2" width={140} height={140} />
         </div>
@@ -37,7 +37,7 @@ export default function Header() {
           </Link> */}
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center justify-center gap-1 w-full">
+          <nav className="hidden md:flex items-center justify-center gap-1  w-full" >
             {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study'].map((item) => {
               const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
               const isActive = pathname === path;
@@ -85,37 +85,39 @@ export default function Header() {
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </Link> */}
         </div>
-      </header>
+      </header >
 
       {/* Mobile Slide-out Menu Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-32 px-8 flex flex-col md:hidden animate-in slide-in-from-top-10 duration-200 text-center">
-          <nav className="flex flex-col gap-4 text-center">
-            {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study', 'Contact'].map((item) => {
-              const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
-              return (
-                <Link
-                  key={item}
-                  href={path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-xl font-bold text-white py-2 border-b border-gray-800 hover:text-purple-500 transition-colors"
-                >
-                  {item}
-                </Link>
-              )
-            })}
+      {
+        isMenuOpen && (
+          <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-32 px-8 flex flex-col md:hidden animate-in slide-in-from-top-10 duration-200 text-center">
+            <nav className="flex flex-col gap-4 text-center">
+              {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study', 'Contact'].map((item) => {
+                const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
+                return (
+                  <Link
+                    key={item}
+                    href={path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-xl font-bold text-white py-2 border-b border-gray-800 hover:text-purple-500 transition-colors"
+                  >
+                    {item}
+                  </Link>
+                )
+              })}
 
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className=" mt-8 bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white py-4 rounded-xl font-bold md:flex hidden justify-center items-center gap-2"
-            >
-              Request Quote
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </Link>
-          </nav>
-        </div>
-      )}
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className=" mt-8 bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white py-4 rounded-xl font-bold md:flex hidden justify-center items-center gap-2"
+              >
+                Request Quote
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </Link>
+            </nav>
+          </div>
+        )
+      }
     </>
   );
 }

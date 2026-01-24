@@ -3,10 +3,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PricingSection from '@/components/PricingSection';
-import ClientCarousel from '@/components/ClientCarousel';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
 import HeroSection from '../about-us/Herosection';
+import Testimonials from '@/components/Testimonials';
 export default function PricingPage() {
     return (
         <main className="min-h-screen bg-black text-white">
@@ -14,7 +14,7 @@ export default function PricingPage() {
             <div className="pt-20">
                 <PricingSection />
             </div>
-            <ClientCarousel />
+            <Testimonials />
             <FAQ />
             <ContactFormSection />
             <Footer />
