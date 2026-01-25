@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Section_Two from './Section_Two';
 
 // --- Reusable Typewriter Component ---
 const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "" }: { text: string, delay?: number, speed?: number, className?: string }) => {
@@ -32,14 +33,15 @@ const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "" }: { tex
             variants={container}
             initial="hidden"
             animate="visible"
-            className={className}
+            className={`${className} `}
         >
             {letters.map((letter, index) => (
                 <motion.span variants={child} key={index}>
                     {letter}
                 </motion.span>
-            ))}
-        </motion.span>
+            ))
+            }
+        </motion.span >
     );
 };
 
@@ -54,21 +56,28 @@ export default function HomeHero() {
     const businessStart = growStart + (line2Length * speed) + 0.5; // +0.5 for a natural breath
 
     return (
-        <section className="relative min-h-[110vh] overflow-hidden flex flex-col justify-center font-sans bg-[#0a0516]">
+        <section className="relativem h-full overflow-hidden flex flex-col justify-center font-sans bg-[#0a0516]">
             {/* Background Effects */}
+
             <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-purple-600 opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
             <div className="absolute top-[10%] right-[0%] w-[1000px] h-[1000px] bg-indigo-900 opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 md:px-8 relative z-10 pt-[23rem] md:pt-32">
+            <div className="container mx-auto px-4 md:px-8 relative z-10 pt-[28rem] md:pt-32">
                 <div className="flex w-full gap-12 items-center">
                     <div className="relative w-full text-center md:text-left ">
-                        <h1 className="text-4xl md:text-7xl font-medium text-white leading-[1.1] mb-4 md:mb-8 tracking-tight">
+                        <h1 className="text-3xl md:text-5xl font-medium text-white leading-[1.1] mb-4 md:mb-8 tracking-tight">
                             {/* Sequence 1: Main Title Start */}
-                            <TypewriterText text="Designed to " delay={0.2} speed={speed} />
+                            <TypewriterText text="Designed to " className='bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_30%,rgba(255,255,255,0.5)_84.77%)] bg-clip-text text-transparent
+' delay={0.2} speed={speed} />
 
-                            <span className="text-[#A855F7] relative inline-block">
+                            <span className=" relative block md:inline-block">
                                 {/* Sequence 2: Continues with "Grow" */}
-                                <TypewriterText text="Grow" delay={growStart} speed={speed} />
+                                <TypewriterText text="Grow"
+                                    style={{
+                                        background: 'linear-gradient(258.73deg, #6B2CEC 7.48%, #A156F7 92.51%)'
+                                    }}
+                                    delay={growStart} speed={speed} className="bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent"
+                                />
 
                                 {/* Cursor - Only blinks during the heading phase */}
                                 <motion.span
@@ -83,24 +92,56 @@ export default function HomeHero() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: businessStart - 0.2 }}
-                                    className="absolute top-4 left-48 bg-[#2e1065] border border-gray-700 text-white text-sm px-2 py-2 rounded-full flex items-center gap-1 w-44"
+                                    style={{
+                                        background: "linear-gradient(258.73deg, rgba(107,44,236,0.4) 7.48%, rgba(161,86,247,0.4) 92.51%)"
+                                    }}
+
+                                    className="inline-flex items-center gap-2  border border-[#FFFFFF80] text-white text-sm px-3 py-1 md:py-2 rounded-full mb-4 bg-opacity-40"
                                 >
-                                    <div className='w-8 h-8 rounded-full flex items-center justify-center bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]'>
-                                        <Image src="/assets/star.svg" alt="star" width={20} height={20} />
+                                    <div className='w-4 md:w-6 h-4 md:h-6 rounded-full flex items-center justify-center '
+                                        style={{ background: 'linear-gradient(258.73deg, #6B2CEC 7.48%, #A156F7 92.51%)' }}
+                                    >
+                                        <Image src="/assets/star.svg" alt="star" width={20} height={20} className='hidden md:block' />
+                                        <Image src="/assets/star.svg" alt="star" width={10} height={10} className='md:hidden' />
+
                                     </div>
-                                    <span className="tracking-wider text-[12px]">Best Web & App</span>
+                                    <span className=" text-xs md:text-sm tracking-tight">Best Web & App</span>
                                 </motion.span>
                             </span>
                             <br />
 
-                            {/* Sequence 3: "Your Business" line */}
-                            <span className="block mt-2">
-                                <TypewriterText text="Your Business" delay={businessStart} speed={speed} />
-                            </span>
+                            {/* Innovative Product Button */}
+                            <div className='flex  md:flex-row flex-col items-center gap-2 '>
+                                <motion.div
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: businessStart - 0.2 }}
+                                    style={{
+                                        background: 'linear-gradient(258.73deg, rgba(107,44,236,0.4) 7.48%, rgba(161,86,247,0.4) 92.51%)'
+                                    }} className="inline-flex items-center gap-2 bg-[#2e1065] border border-gray-700 text-white text-sm px-3 py-1 md:py-2 rounded-full "
+                                >
+                                    <div className=' w-4 md:w-6 h-4 md:h-6 rounded-full flex items-center justify-center bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]'>
+                                        <Image src="/assets/star.svg" alt="star" width={20} height={20} className='hidden md:block' />
+                                        <Image src="/assets/star.svg" alt="star" width={10} height={10} className='md:hidden' />
+                                    </div>
+                                    <span className="tracking-tight text-xs md:text-sm">Innovative Product of the Year</span>
+                                </motion.div>
+
+                                <div className='flex'>
+                                    {/* "Your Business" line */}
+                                    <span className="block mt-2">
+                                        <TypewriterText text="Your" className='bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent' delay={businessStart} speed={speed} />
+                                    </span>
+                                    <span className="block mt-2">
+                                        <TypewriterText text=" Business"
+                                            className='bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_30%,rgba(255,255,255,0.5)_84.77%)] bg-clip-text text-transparent' delay={businessStart} speed={speed} />
+                                    </span>
+                                </div>
+                            </div>
                         </h1>
 
                         {/* Sequence 4: The Paragraph (Begins after heading is done) */}
-                        <div className="text-gray-400 text-sm max-w-md mb-10 leading-[1.2] md:leading-relaxed min-h-[60px]">
+                        <div className="text-gray-400 text-xs md:text-sm max-w-md mb-1 md:mb-10 leading-[1.2] md:leading-relaxed min-h-[60px]">
                             <TypewriterText
                                 text="We provide you with a convenient and reliable platform for effective business management. Forget about complexities—we'll handle everything for your convenience!"
                                 delay={businessStart + 1} // Starts 1 second after "Your Business"
@@ -115,16 +156,21 @@ export default function HomeHero() {
                             transition={{ delay: businessStart + 4 }}
                             className="flex items-center justify-center md:justify-start gap-6"
                         >
-                            <button className="h-12 px-8 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white font-bold text-sm flex items-center gap-2 shadow-[0_0_25px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.6)] transition-all">
+                            <button className="h-8 md:h-10 w-[160px] pl-6  pr-2 rounded-full bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] text-white font-medium text-sm flex items-center justify-between gap-2">
                                 Get Started
-                                <div className="bg-white rounded-full p-1">
-                                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="4"><polyline points="7 17 17 7 17 17"></polyline><line x1="7" y1="17" x2="17" y2="7"></line></svg>
+                                <div className="bg-white rounded-full p-2">
+                                    <Image src={'/assets/arrow.svg'} width={12} height={12} className='hidden md:block' />
+                                    <Image src={'/assets/arrow.svg'} width={10} height={10} className='md:hidden block' />
                                 </div>
                             </button>
                         </motion.div>
                     </div>
                 </div>
+
             </div>
+
+
         </section>
+
     );
 }

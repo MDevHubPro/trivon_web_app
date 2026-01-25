@@ -14,6 +14,7 @@ import BrandMarquee from '@/components/BrandMarquee';
 import Image from 'next/image';
 import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 import CollaborateCard from '@/components/CollaborateCard';
+import Section_Two from '@/components/Section_Two';
 import FAQ from '@/components/FAQ';
 
 export default function Home() {
@@ -22,9 +23,9 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen  text-white w-full ">
-      <div className='relative min-h-screen w-full'>
-        <div className='h-[619px] w-full relative'>
+    <main className="min-h-screen  text-white overflow-hidden w-full ">
+      <div className='relative h-[110vh] w-full'>
+        <div className='h-full w-full relative'>
           <Header />
           {/* 1. Hero Section */}
 
@@ -34,9 +35,12 @@ export default function Home() {
           </div>
 
         </div>
-        <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-5.png")] bg-cover bg-center bg-no-repeat'></div>
-        <div className='absolute z-[0] top-0 bottom-0 right-0 aspect-square w-full md:w-2/3 bg-[url("/assets/bg-3.png")] bg-cover bg-center md:bg-top bg-no-repeat'></div>
+        <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-5.png")] bg-cover md:bg-bottom bg-no-repeat h-full'></div>
+        <div className='absolute z-[0] top-0 bottom-0 right-0 aspect-square w-full md:w-[60%] bg-[url("/assets/bg-3.png")] bg-cover bg-center md:bg-top bg-no-repeat h-full'></div>
 
+      </div>
+      <div className='absolute left-0 right-0 bottom-0'>
+        <Section_Two />
       </div>
       <BrandMarquee brands={brands} />
 

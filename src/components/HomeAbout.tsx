@@ -19,7 +19,7 @@ export default function HeroSection() {
                 </button>
 
                 {/* Our Services Button */}
-                <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 mb-6 sm:mb-8 flex items-center gap-2">
+                {/* <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 mb-6 sm:mb-8 flex items-center gap-2">
                     <svg
                         className="w-4 h-4"
                         fill="none"
@@ -34,7 +34,7 @@ export default function HeroSection() {
                         />
                     </svg>
                     Our Services
-                </button>
+                </button> */}
 
                 {/* Let's Work Together Heading */}
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium trac text-center mb-6 sm:mb-8 px-4">
