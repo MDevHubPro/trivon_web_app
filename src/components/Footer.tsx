@@ -15,7 +15,7 @@ export default function Footer() {
               {/* <span className="text-white font-bold text-xl">TRIVON<br /><span className="text-purple-500">DIGITAL</span></span> */}
             </div>
             <p className="leading-relaxed">
-              We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+              {`We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!`}
             </p>
             <div className="flex space-x-4">
               {/* Social Icons Placeholder */}
