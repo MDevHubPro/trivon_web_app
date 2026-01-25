@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-purple-500/30">
 
-      <HeroSection heading_one={"About Us"} heading_two={'Trivon Digital'} text={"Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering and DeFi innovation for more inclusive, reliable and sustainable systems"} main_heading={"About Us"} />
+      <HeroSection />
 
 
       <VisionMissionSection />

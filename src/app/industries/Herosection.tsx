@@ -11,6 +11,8 @@ const HeroSection = ({ children }: PropsWithChildren) => {
 
         <div className='relative h-[619px] w-full '>
             <Header />
+            <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-5.png")] bg-cover bg-center bg-no-repeat'></div>
+
             {/* 1. Hero Section */}
             {/* <div className='block  absolute z-[0] h-full  top-0 right-0 bottom-0 left-0 bg-[url("/assets/bg-5.png")] bg-cover bg-center bg-no-repeat'></div> */}
 

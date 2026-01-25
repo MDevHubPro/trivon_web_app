@@ -13,7 +13,7 @@ export default function TrivonHero() {
         <div className='relative h-[619px] w-full bg-cover bg-center bg-no-repeat'>
             <Header />
             {/* 1. Hero Section */}
-            {/* <div className='md:block hidden absolute z-[0] h-full top-6 inset-0 bg-[url("/assets/bg-5.png")] bg-cover bg-center bg-no-repeat'></div> */}
+            <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-5.png")] bg-cover bg-center bg-no-repeat'></div>
 
             {/* <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-2.png")] bg-cover bg-center bg-no-repeat'></div> */}
             <div className="relative h-full w-full  flex flex-col items-center justify-center px-4 overflow-hidden">
