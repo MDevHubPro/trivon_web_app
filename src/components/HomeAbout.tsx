@@ -1,57 +1,64 @@
-'use client';
-
-export default function HomeAbout() {
+export default function HeroSection() {
     return (
-        <section className="relative bg-black pt-32 pb-48 overflow-hidden ">
+        <div className="min-h-screen relative overflow-visible bg-[url('/assets/about.png')] bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+            {/* Main Heading */}
+            {/* <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-center mb-8 sm:mb-12">
+                <span className="text-purple-900 opacity-80">ABOUT US</span>
+            </h1> */}
 
-            {/* Stats Row - Positioned at top of About Section as per image */}
-            <div className="container mx-auto px-4 md:px-8 mb-32">
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-900 pb-12">
-                    {[
-                        { val: '130K', sub: '+250%', label: 'Sponsors' },
-                        { val: '500K', sub: '+124%', label: 'Sponsorship' },
-                        { val: '340K', sub: '+84%', label: 'Organizations' },
-                        { val: '130K', sub: '+56%', label: 'Repositories' },
-                        { val: '130K', sub: '+84%', label: 'Code Searches' }
-                    ].map((stat, i) => (
-                        <div key={i} className="text-center md:text-left">
-                            <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
-                                <div className="w-5 h-5 rounded-full bg-[#111] border border-gray-800 flex items-center justify-center text-[10px] text-gray-500 font-bold">$</div>
-                                <span className="text-[10px] text-gray-500 uppercase tracking-widest">{stat.label}</span>
-                            </div>
-                            <div className="text-4xl font-bold text-white mb-1">
-                                {stat.val}
-                            </div>
-                            <p className="text-[10px] text-green-500 font-bold">{stat.sub}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            {/* Description Text */}
 
-            {/* Giant 'ABOUT US' Watermark Background - Stroke Only */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none z-0 ">
-                <h1 className="text-[12rem] md:text-[18rem] font-bold leading-none tracking-widest text-transparent opacity-20">
-                    ABOUT US
-                </h1>
-            </div>
-
-            {/* Content Overlay */}
-            <div className="relative z-10 container mx-auto px-4 text-center flex flex-col gap-4">
-                <p className="text-gray-400 text-xs md:text-sm max-w-xl mx-auto leading-relaxed ">
+            <div className="absolute right-0 left-0 max-w-5xl mx-auto flex flex-col items-center  top-1/2 ">
+                <p className="text-gray-300 text-center max-w-2xl mb-8 sm:mb-10 text-sm sm:text-base px-4">
                     We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
                 </p>
 
-                <button className="bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white px-8 py-3 rounded-full font-bold text-xs flex items-center gap-2 mx-auto hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-shadow">
+                {/* Read More Button */}
+                <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-sm sm:text-base font-medium transition-colors duration-200 mb-16 sm:mb-24">
                     Read More
-                    <div className="bg-white rounded-full p-0.5">
-                    </div>
                 </button>
-            </div>
 
-            {/* Planet Horizon Curve Separator at Bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-[450px]  bg-[url('/assets/about.png')] bg-cover bg-center overflow-hidden pointer-events-none">
-                {/* The glowing curve */}
+                {/* Our Services Button */}
+                <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 mb-6 sm:mb-8 flex items-center gap-2">
+                    <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 10V3L4 14h7v7l9-11h-7z"
+                        />
+                    </svg>
+                    Our Services
+                </button>
+
+                {/* Let's Work Together Heading */}
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium trac text-center mb-6 sm:mb-8 px-4">
+                    <span
+                        style={{
+                            background: "radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.5) 84.77%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                        }}>Let's work </span>
+                    <span className="bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] bg-clip-text text-transparent">together</span>
+                    <br />
+                    <span className="bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] bg-clip-text text-transparent">with </span>
+                    <span style={{
+                        background: "radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.5) 84.77%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                    }}>our us</span>
+                </h2>
+
+                {/* Bottom Description */}
+                <p className="text-gray-300 text-center max-w-2xl text-sm sm:text-base px-4">
+                    We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+                </p>
             </div>
-        </section>
+        </div>
     );
 }

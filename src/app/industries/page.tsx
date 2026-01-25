@@ -18,7 +18,7 @@ export default function IndustriesPage() {
             <Herosection >
                 <Maincontent />
             </Herosection>
-            <div className="pt-20">
+            <div className="">
                 {/* <IndustriesGrid /> */}
                 <CoreIndustryServices />
 

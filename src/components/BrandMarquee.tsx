@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 
-export default function BrandMarquee({ brands }: { brands: string[] }) {
+export default function BrandMarquee({ brands, className }: { brands: string[]; className?: string }) {
     return (
-        <section className="bg-black py-12 border-b border-gray-900 overflow-hidden relative z-20">
+        <section className={`bg-black py-12 border-b border-gray-900 overflow-hidden relative ${className}`}>
             <div className="flex whitespace-nowrap">
                 <motion.div
                     className="flex items-center gap-24 px-12"

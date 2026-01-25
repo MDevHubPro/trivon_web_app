@@ -76,35 +76,25 @@ export default function WorkTogether() {
     if (!mounted) return <div className="py-24 bg-black" />;
 
     return (
-        <section className="py-12 md:py-24 bg-black relative overflow-hidden">
+        <section className="py-12 md:py-24 relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                {/* Blue Neon Lines Effect (Left Side) */}
-                <svg className="absolute top-0 left-0 w-[500px] h-[800px] opacity-30" viewBox="0 0 500 800" fill="none">
-                    <path d="M-100 0 L200 300 L-100 600" stroke="#00d4ff" strokeWidth="2" />
-                    <path d="M-50 0 L250 300 L-50 600" stroke="#00d4ff" strokeWidth="2" opacity="0.5" />
-                    <circle cx="200" cy="300" r="100" stroke="#00d4ff" strokeWidth="1" strokeDasharray="10 10" opacity="0.3" />
-                </svg>
-            </div>
+
 
             <div className="container mx-auto px-4 md:px-8 mb-12 relative z-10">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20">
                     <div className="max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1a1a2e] border border-gray-800 mb-8">
-                            <span className="w-5 h-5 rounded-full bg-purple-500 flex items-center justify-center text-[10px] text-white shadow-[0_0_10px_rgba(168,85,247,0.5)]">✨</span>
-                            <span className="text-gray-300 text-xs font-medium tracking-wide">Our Services</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full  mb-8">
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
-                            Let&apos;s work <span className="text-[#8B5CF6]">together</span>
+                            <span className="text-[#8B5CF6]"></span>
                         </h2>
                         <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-                            <span className="text-[#8B5CF6]">with</span> our us
+                            <span className="text-[#8B5CF6]"></span>
                         </h2>
 
                         <p className="text-gray-500 text-sm max-w-xl leading-relaxed">
-                            We provide you with a convenient and reliable platform for effective business management. Forget about complexities we&apos;ll handle everything for your convenience!
                         </p>
                     </div>
 

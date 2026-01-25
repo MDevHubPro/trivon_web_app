@@ -7,7 +7,8 @@ import PricingSection from '@/components/PricingSection';
 import ProcessSection from '@/components/ProcessSection';
 import FAQ from '@/components/FAQ';
 import ContactFormSection from '@/components/ContactFormSection';
-import HeroSection from '../about-us/Herosection';
+import HeroSection from '../industries/Herosection';
+import Maincontent from './Maincontent';
 import CoreIndustryServices from '@/components/CoreIndustryServices';
 import Testimonials from '@/components/Testimonials';
 import ExpertiseSection from '@/components/ExpertiseSection';
@@ -83,7 +84,9 @@ export default function ServicesPage() {
 
 
 
-            <HeroSection heading_one={"CUSTOM DEVELOPMENT SERVICES"} text={"We specialize in creating innovative, scalable, and secure decentralized applications that redefine the future of digital interactions."} main_heading={"*/Web Dev"} />
+            <HeroSection >
+                <Maincontent />
+            </HeroSection>
 
             <ExpertiseSection />
 

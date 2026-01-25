@@ -5,14 +5,14 @@ import Header from '@/components/Header';
 import ContactFormSection from '@/components/ContactFormSection';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
-import HeroSection from '../industries/Herosection';
+import HeroSection from './Herosection';
 import Testimonials from '@/components/Testimonials';
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
       <HeroSection >
-        <section className="pt-32 pb-16 md:pt-48 md:pb-24  relative overflow-hidden">
+        <section className="pt-32 pb-16  relative overflow-hidden">
 
           {/* Background Glows */}
           {/* /   <div className="absolute top-0 left-1/4 w-96 h-96   rounded-full pointer-events-none"></div> */}

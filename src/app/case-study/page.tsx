@@ -89,8 +89,8 @@ export default function CaseStudyPage() {
   return (
 
     <>
-      <HeroSection />
 
+      <HeroSection />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-black relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -288,6 +288,8 @@ export default function CaseStudyPage() {
           </div>
 
         </div>
+
+
       </section >
 
 

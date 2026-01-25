@@ -25,18 +25,17 @@ export default function Home() {
     <main className="min-h-screen  text-white w-full ">
       <div className='relative min-h-screen w-full'>
         <div className='h-[619px] w-full relative'>
-          <div className='md:block hidden absolute z-[0] h-full top-6 inset-0 bg-[url("/assets/bg-image.png")] bg-cover bg-center bg-no-repeat'></div>
           <Header />
           {/* 1. Hero Section */}
 
 
-          <div className='absolute left-0 top-0 bottom-0  w-full h-full'>
+          <div className='absolute left-0 bottom-0  md:top-0 w-full h-full '>
             <HomeHero />
           </div>
 
         </div>
-        <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-2.png")] bg-cover bg-center bg-no-repeat'></div>
-        <div className='absolute z-[0] top-0 bottom-0 right-0 h-[619px] w-[619px] bg-[url("/assets/bg-3.png")] bg-cover bg-top bg-no-repeat'></div>
+        <div className='absolute z-[0]  inset-0 bg-[url("/assets/bg-5.png")] bg-cover bg-center bg-no-repeat'></div>
+        <div className='absolute z-[0] top-0 bottom-0 right-0 aspect-square w-full md:w-2/3 bg-[url("/assets/bg-3.png")] bg-cover bg-center md:bg-top bg-no-repeat'></div>
 
       </div>
       <BrandMarquee brands={brands} />

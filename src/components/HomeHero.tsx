@@ -3,164 +3,128 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function HomeHero() {
+// --- Reusable Typewriter Component ---
+const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "" }: { text: string, delay?: number, speed?: number, className?: string }) => {
+    const letters = Array.from(text);
+
+    const container = {
+        hidden: { opacity: 1 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: speed, delayChildren: delay },
+        },
+    };
+
+    const child = {
+        visible: {
+            opacity: 1,
+            display: "inline",
+            transition: { duration: 0.01 }, // Sharp reveal for typewriter feel
+        },
+        hidden: {
+            opacity: 0,
+            display: "none",
+        },
+    };
+
     return (
-        <section className="relative min-h-[110vh]  overflow-hidden flex flex-col justify-center font-sans">
+        <motion.span
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className={className}
+        >
+            {letters.map((letter, index) => (
+                <motion.span variants={child} key={index}>
+                    {letter}
+                </motion.span>
+            ))}
+        </motion.span>
+    );
+};
 
+export default function HomeHero() {
+    // Timing constants to keep things consistent
+    const speed = 0.05;
+    const line1Length = "Designed to ".length;
+    const line2Length = "Grow".length;
 
+    // Calculation for start times (start + (chars * speed))
+    const growStart = 0.2 + (line1Length * speed);
+    const businessStart = growStart + (line2Length * speed) + 0.5; // +0.5 for a natural breath
+
+    return (
+        <section className="relative min-h-[110vh] overflow-hidden flex flex-col justify-center font-sans bg-[#0a0516]">
             {/* Background Effects */}
-            {/* Purple Haze Top Left */}
-            <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] opacity-40 blur-[150px] rounded-full pointer-events-none"></div>
-            {/* Deep Purple Glow Center/Right */}
-            <div className="absolute top-[10%] right-[0%] w-[1000px] h-[1000px] opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-purple-600 opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-[10%] right-[0%] w-[1000px] h-[1000px] bg-indigo-900 opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
 
-            {/* Grid Pattern Overlay */}
-            {/* <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none"></div> */}
+            <div className="container mx-auto px-4 md:px-8 relative z-10 pt-[23rem] md:pt-32">
+                <div className="flex w-full gap-12 items-center">
+                    <div className="relative w-full text-center md:text-left ">
+                        <h1 className="text-4xl md:text-7xl font-medium text-white leading-[1.1] mb-4 md:mb-8 tracking-tight">
+                            {/* Sequence 1: Main Title Start */}
+                            <TypewriterText text="Designed to " delay={0.2} speed={speed} />
 
-            {/* Geometric Cube Grid Lines (Abstract) */}
-            <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
-                {/* <svg width="100%" height="100%">
-                    <pattern id="cubes" width="100" height="100" patternUnits="userSpaceOnUse">
-                        <path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="none" stroke="white" strokeWidth="0.5" />
-                        <path d="M50 0 L50 50 L100 75" fill="none" stroke="white" strokeWidth="0.5" />
-                        <path d="M0 25 L50 50" fill="none" stroke="white" strokeWidth="0.5" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#cubes)" />
-                </svg> */}
-            </div>
+                            <span className="text-[#A855F7] relative inline-block">
+                                {/* Sequence 2: Continues with "Grow" */}
+                                <TypewriterText text="Grow" delay={growStart} speed={speed} />
 
-            <div className="container mx-auto px-4 md:px-8 relative z-10 pt-32">
-                <div className=" flex w-full  gap-12 items-center">
+                                {/* Cursor - Only blinks during the heading phase */}
+                                <motion.span
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: [0, 1, 0] }}
+                                    transition={{ repeat: 8, duration: 0.6 }}
+                                    className="inline-block w-1 h-12 bg-[#A855F7] ml-1 absolute bottom-2"
+                                />
 
-                    {/* Content - Left */}
-                    <div className="relative w-full">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-6xl md:text-7xl font-medium text-white leading-[1.1] mb-8 tracking-tight"
-                        >
-                            Designed to <span className="text-[#A855F7] relative inline-block">
-                                Grow
-                                {/* Badge next to Grow */}
-                                <span className="absolute top-4 left-48  bg-[#2e1065]
- border border-gray-700 text-white text-sm px-2 py-2 rounded-full flex items-center gap-1 w-44">
-
-                                    <div className='w-8 h-8 rounded-full flex items-center justify-center   bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]'>
-                                        <Image src="/assets/star.svg" alt="arrow" width={20} height={20} />
+                                {/* Badge - Pops in after the heading is fully typed */}
+                                <motion.span
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: businessStart - 0.2 }}
+                                    className="absolute top-4 left-48 bg-[#2e1065] border border-gray-700 text-white text-sm px-2 py-2 rounded-full flex items-center gap-1 w-44"
+                                >
+                                    <div className='w-8 h-8 rounded-full flex items-center justify-center bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]'>
+                                        <Image src="/assets/star.svg" alt="star" width={20} height={20} />
                                     </div>
-                                    <span className="tracking-wider">Best Web & App</span>
-                                </span>
-                            </span> <br />
-                            <span className="flex items-center mt-6 gap-4">
-                                {/* Pill Badge */}
-                                <span className="inline-flex items-center gap-2 bg-[#2e1065] text-white text-sm px-3 py-1.5 rounded-full border border-purple-500/50">
-
-                                    <div className='w-8 h-8 rounded-full flex items-center justify-center   bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)]'>
-                                        <Image src="/assets/star.svg" alt="arrow" width={20} height={20} />
-                                    </div>
-                                    <span className="tracking-wider">  Innovative Product of the Year  </span>
-                                </span>
+                                    <span className="tracking-wider text-[12px]">Best Web & App</span>
+                                </motion.span>
                             </span>
-                            <span className="block mt-2">Your Business</span>
-                        </motion.h1>
+                            <br />
 
-                        <p className="text-gray-400 text-sm max-w-md mb-10 leading-relaxed">
-                            We provide you with a convenient and reliable platform for effective business management. Forget about complexities- we'll handle everything for your convenience!
-                        </p>
+                            {/* Sequence 3: "Your Business" line */}
+                            <span className="block mt-2">
+                                <TypewriterText text="Your Business" delay={businessStart} speed={speed} />
+                            </span>
+                        </h1>
 
-                        <div className="flex items-center gap-6">
+                        {/* Sequence 4: The Paragraph (Begins after heading is done) */}
+                        <div className="text-gray-400 text-sm max-w-md mb-10 leading-[1.2] md:leading-relaxed min-h-[60px]">
+                            <TypewriterText
+                                text="We provide you with a convenient and reliable platform for effective business management. Forget about complexities—we'll handle everything for your convenience!"
+                                delay={businessStart + 1} // Starts 1 second after "Your Business"
+                                speed={0.02} // Typed slightly faster for long text
+                            />
+                        </div>
+
+                        {/* Sequence 5: The Final UI Reveal */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: businessStart + 4 }}
+                            className="flex items-center justify-center md:justify-start gap-6"
+                        >
                             <button className="h-12 px-8 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#a855f7] text-white font-bold text-sm flex items-center gap-2 shadow-[0_0_25px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.6)] transition-all">
                                 Get Started
                                 <div className="bg-white rounded-full p-1">
                                     <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="4"><polyline points="7 17 17 7 17 17"></polyline><line x1="7" y1="17" x2="17" y2="7"></line></svg>
                                 </div>
                             </button>
-                        </div>
-
-                        {/* Bottom Socials */}
-                        <div className="mt-24 flex items-center gap-3 text-xs text-gray-400 font-medium">
-                            <span>Follow For More</span>
-                            <div className="w-8 h-px bg-gray-700"></div>
-                            <div className="flex gap-4 text-white">
-                                <span className="hover:text-purple-400 cursor-pointer"><i className="fab fa-instagram">IG</i></span>
-                                <span className="hover:text-purple-400 cursor-pointer"><i className="fas fa-globe">Web</i></span>
-                                <span className="hover:text-purple-400 cursor-pointer"><i className="fab fa-linkedin">In</i></span>
-                                <span className="hover:text-purple-400 cursor-pointer"><i className="fab fa-twitter">Tw</i></span>
-                            </div>
-                        </div>
-
-                        <div className="absolute right-0 top-0 h-[1200px] w-1/2  z-10 ">
-
-                            {/* The Coin */}
-                            {/* <div className="relative z-10 h-full w-full ">
-                                <Image src={'/assets/bg-3.png'} alt="Coin" width={1150} height={1250} />
-                                {/* Light Beams from center */}
-                            {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[conic-gradient(from_0deg,transparent_0deg,#7c3aed_20deg,transparent_40deg,transparent_360deg)] opacity-30 blur-xl rotate-45 pointer-events-none"></div> */}
-                            {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[conic-gradient(from_180deg,transparent_0deg,#7c3aed_20deg,transparent_40deg,transparent_360deg)] opacity-30 blur-xl rotate-45 pointer-events-none"></div> */}
-
-                            {/* Coin CSS Construction */}
-                            {/* <motion.div
-                                className="w-full h-full rounded-full bg-[#1e1035] border border-purple-500/30 flex items-center justify-center relative shadow-[0_0_80px_rgba(124,58,237,0.3)]"
-                                style={{
-                                    transformStyle: 'preserve-3d',
-                                    transform: 'rotateY(-15deg) rotateX(10deg)'
-                                }}
-                                animate={{ y: [-15, 15, -15] }}
-                                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                            >
-                                {/* Coin Face */}
-                            {/* <div className="w-[85%] h-[85%] rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#4c1d95] shadow-inner flex items-center justify-center border-4 border-[#6d28d9] relative overflow-hidden">
-                                {/* Glossy Reflection */}
-                            <div className="absolute top-0 left-0 w-full h-1/2 bg-white opacity-10 skew-y-12 blur-md"></div>
-
-                            {/* Logo "D" or "T" */}
-                            <div className="text-white text-9xl font-black italic drop-shadow-md" style={{ fontFamily: 'sans-serif' }}>
-                                {/* <svg width="150" height="150" viewBox="0 0 100 100" fill="currentColor">
-                                            <path d="M20 20 H60 Q90 20 90 50 Q90 80 60 80 H20 V20 Z M40 40 V60 H55 Q70 60 70 50 Q70 40 55 40 H40 Z" />
-                                            <path d="M30 30 L30 70" stroke="rgba(0,0,0,0.2)" strokeWidth="2" />
-                                        </svg> */}
-                            </div>
-                            {/* </div>  */}
-
-                            {/* Coin Edge (Pseudo-3D) */}
-                            {/* <div className="absolute inset-0 rounded-full border-[12px] border-[#2e1065] opacity-50 pointer-events-none" style={{ transform: 'translateZ(-20px)' }}></div> */}
-                            {/* </motion.div>  */}
-                            {/* </div> * */}
-
-                            {/* Scroll Down Spinner (Bottom Center of this column or absolute to section) */}
-                            {/* <div className="absolute bottom-10 left-0 right-0 lg:left-[-50%] flex justify-center">
-                            <div className="relative w-24 h-24 flex items-center justify-center group cursor-pointer">
-                                <div className="absolute inset-0 animate-spin-slow">
-                                    <svg viewBox="0 0 100 100" width="100" height="100">
-                                        <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-                                        <text fill="gray" fontSize="12" letterSpacing="2px">
-                                            <textPath href="#circlePath" startOffset="0%">
-                                                SCROLL DOWN FOR MORE • SCROLL DOWN •
-                                            </textPath>
-                                        </text>
-                                    </svg>
-                                </div>
-                                <div className="text-white">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="5" y="2" width="14" height="20" rx="7" /><line x1="12" y1="6" x2="12" y2="10" /></svg>
-                                </div>
-                            </div>
-                        </div> */}
-
-                            {/* Bottom Right Text */}
-                            <div className="absolute bottom-10 right-0 max-w-[200px] text-right hidden lg:block">
-                                <p className="text-[10px] text-gray-500 leading-relaxed">
-                                    Trivon Digital is an agency that builds brands for every angle. Today, tomorrow and years from now.
-                                </p>
-                            </div>
-
-                        </div>
+                        </motion.div>
                     </div>
-
-                    {/* Visual - Right */}
-
                 </div>
             </div>
-
-        </section >
+        </section>
     );
 }
