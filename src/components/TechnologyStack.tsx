@@ -54,7 +54,7 @@ export default function TechnologyStack() {
             <div className="container mx-auto px-4 md:px-8">
 
                 <div className="mb-16 flex flex-col  gap-9">
-                    <h2 className="text-5xl md:text-[170px] font-bold text-white mb-4">
+                    <h2 className="text-5xl xl:text-[170px] font-bold text-white mb-4">
                         Technology <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">Stack</span>
                     </h2>
                     <p className="text-gray-500 md:text-[20px] text-[14px] max-w-[70%]">

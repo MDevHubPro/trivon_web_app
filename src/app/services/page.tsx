@@ -10,6 +10,8 @@ import ContactFormSection from '@/components/ContactFormSection';
 import HeroSection from '../about-us/Herosection';
 import CoreIndustryServices from '@/components/CoreIndustryServices';
 import Testimonials from '@/components/Testimonials';
+import ExpertiseSection from '@/components/ExpertiseSection';
+
 
 
 const packages = [
@@ -83,12 +85,14 @@ export default function ServicesPage() {
 
             <HeroSection heading_one={"CUSTOM DEVELOPMENT SERVICES"} text={"We specialize in creating innovative, scalable, and secure decentralized applications that redefine the future of digital interactions."} main_heading={"*/Web Dev"} />
 
+            <ExpertiseSection />
+
             {/* Process Section */}
             <ProcessSection />
 
 
             <div className="container mx-auto px-4 md:px-8 relative z-10">
-                <h1 className="text-center text-[70px] font-semibold leading-tight md:text-[70px] mb-8">
+                <h1 className="text-center  text-[32px] font-semibold leading-tight md:text-[70px] mb-8">
                     <span className="bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] bg-clip-text text-transparent">
                         Explore
                     </span>{" "}

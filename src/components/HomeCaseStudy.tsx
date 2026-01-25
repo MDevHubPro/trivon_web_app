@@ -1,67 +1,91 @@
 'use client';
 
+import React from 'react';
+import { motion } from 'framer-motion';
+
 export default function HomeCaseStudy() {
     return (
-        <section className="py-24 bg-black relative">
-            <div className="container mx-auto px-4 md:px-8">
+        <section className="bg-black text-white py-24 relative overflow-hidden">
+            <div className="container mx-auto px-4 md:px-8 max-w-7xl">
 
-                <div className="flex items-center gap-4 mb-12">
-                    <h2 className="text-4xl font-bold text-white">Case <span className="text-purple-500">Study</span></h2>
-                    <div className="flex-grow h-px bg-gray-800"></div>
-                    <div className="flex gap-2">
-                        <button className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition">&lt;</button>
-                        <button className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition">&gt;</button>
-                    </div>
-                </div>
+                {/* Title */}
+                <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-12">
+                    <span className="text-neutral-400">Case</span>{' '}
+                    <span className="text-purple-600">Study</span>
+                </h2>
 
-                {/* Featured Card */}
-                <div className="w-full h-[500px] rounded-3xl overflow-hidden relative border border-gray-800 group">
-                    {/* Background Image / Abstract */}
-                    <div className="absolute inset-0 bg-[#0a0a0a]">
-                        {/* Abstract Purple Fluid */}
-                        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-purple-600 to-blue-600 blur-[80px] opacity-40 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                {/* Normal Card */}
+                <div className="relative w-full aspect-[16/11] sm:aspect-[16/9] md:aspect-[2/1] lg:aspect-[2.4/1] xl:aspect-[2.8/1] bg-[#060606] rounded-[1.5rem] md:rounded-[2.5rem] border border-white/10 overflow-hidden group shadow-2xl">
 
-                        {/* Purple Swirl SVG */}
-                        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 500" preserveAspectRatio="none">
-                            <path d="M0,500 C300,400 300,100 500,100 C700,100 700,400 1000,500 L1000,0 L0,0 Z" fill="none" />
-                            {/* Custom flowing shape mimicking the fluid design */}
-                            <path d="M-100,500 C200,500 400,200 600,300 S900,100 1100,0" stroke="#8B5CF6" strokeWidth="2" fill="none" opacity="0.5" />
-                            <path d="M-100,600 C200,600 400,300 600,400 S900,200 1100,100" stroke="#A855F7" strokeWidth="50" fill="none" opacity="0.2" filter="url(#glow)" />
-                        </svg>
-                        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent"></div>
-                    </div>
+                    {/* Background Image */}
+                    <img
+                        src="/case-study-bg.png"
+                        alt="Background"
+                        className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-1000 ease-out"
+                    />
 
-                    {/* Content */}
-                    <div className="absolute inset-0 p-12 flex flex-col justify-end items-start md:w-1/2">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                                {/* Logo Icon */}
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
-                            </div>
-                            <span className="text-2xl font-bold text-white">Phantom</span>
-                            <div className="px-3 py-1 bg-white/10 rounded-full text-[10px] text-white uppercase tracking-wider backdrop-blur-sm">
-                                Crypto Wallet
-                            </div>
-                        </div>
+                    {/* Gradients for depth - more layered for better contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-60" />
+
+                    {/* Navigation Buttons (Top Right) */}
+                    <div className="absolute top-4 right-4 md:top-8 md:right-8 z-30 flex gap-2 md:gap-3">
+                        <button className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all backdrop-blur-md">
+                            <span className="text-xl md:text-2xl mt-[-4px]">‹</span>
+                        </button>
+                        <button className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-all backdrop-blur-md">
+                            <span className="text-xl md:text-2xl mt-[-4px]">›</span>
+                        </button>
                     </div>
 
-                    {/* Right Side Hexagon Centerpiece */}
-                    <div className="absolute right-20 top-1/2 -translate-y-1/2 w-64 h-64 hidden md:flex items-center justify-center">
-                        <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl rotate-45 transform skew-y-6 shadow-[0_0_50px_rgba(168,85,247,0.5)] flex items-center justify-center">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="white" className="-rotate-45">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    {/* Central Hex Icon - Adjust size and position fluidly */}
+                    <div className="absolute right-[10%] lg:right-[20%] top-1/2 -translate-y-1/2 hidden lg:block select-none scale-75 lg:scale-100">
+                        <motion.div
+                            animate={{
+                                scale: [0.95, 1, 0.95],
+                                rotate: [0, 2, 0]
+                            }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                            className="relative w-48 h-48 lg:w-64 lg:h-64 flex items-center left-32 lg:mb-16  justify-center"
+                        >
+                            <div className="absolute inset-0 bg-purple-500/20 blur-[60px] lg:blur-[80px] rounded-full" />
+                            <svg viewBox="0 0 100 100" className="w-32 h-32 lg:w-48 lg:h-48 drop-shadow-[0_0_15px_rgba(147,51,234,0.4)]">
+                                <path d="M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 L50 5Z" fill="#9333ea" />
+                                <circle cx="35" cy="35" r="5" fill="white" />
+                                <circle cx="65" cy="35" r="5" fill="white" />
+                                <circle cx="35" cy="65" r="5" fill="white" />
+                                <circle cx="65" cy="65" r="5" fill="white" />
+                                <path d="M35 40 Q40 50 35 60" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+                                <path d="M65 40 Q60 50 65 60" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+                                <path d="M40 35 Q50 40 60 35" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+                                <path d="M40 65 Q50 60 60 65" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
                             </svg>
+                        </motion.div>
+                    </div>
+
+                    {/* Content Container - Bottom portion */}
+                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 lg:p-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+
+                        {/* Bottom Left Image (casecard.png) */}
+                        <div className="z-20 shrink-0">
+                            <img
+                                src="/assets/casecard.png"
+                                alt="Case Logo"
+                                className="h-12 sm:h-14 md:h-16 2xl:h-20 w-auto object-contain drop-shadow-lg"
+                            />
+                        </div>
+
+                        {/* Description (Bottom Right) */}
+                        <div className="max-w-xs lg:max-w-sm  z-20">
+                            <p className="text-white text-xs md:text-sm leading-relaxed font-light line-clamp-3 md:line-clamp-none">
+                                We provide you with a convenient, reliable platform designed to simplify
+                                every aspect of your business management. Forget the complexities — our
+                                system handles the difficult work for you, ensuring smooth operations, improved efficiency, and total peace of mind.
+                            </p>
                         </div>
                     </div>
-
-                    {/* Description Box Floating */}
-                    <div className="absolute bottom-12 right-12 max-w-sm bg-black/80 backdrop-blur-md rounded-xl p-6 border border-gray-800 hidden md:block">
-                        <p className="text-gray-400 text-xs leading-relaxed">
-                            We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything.
-                        </p>
-                    </div>
                 </div>
-
             </div>
         </section>
     );
