@@ -10,7 +10,7 @@ export default function HeroSection() {
 
             <div className="absolute right-0 left-0 max-w-5xl mx-auto flex flex-col items-center  top-1/2 ">
                 <p className="text-gray-300 text-center max-w-2xl mb-8 sm:mb-10 text-sm sm:text-base px-4">
-                    We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+                    {`We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!`}
                 </p>
 
                 {/* Read More Button */}
@@ -43,7 +43,7 @@ export default function HeroSection() {
                             background: "radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.5) 84.77%)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
-                        }}>Let's work </span>
+                        }}>{`Let's work`}</span>
                     <span className="bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] bg-clip-text text-transparent">together</span>
                     <br />
                     <span className="bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] bg-clip-text text-transparent">with </span>
@@ -56,7 +56,7 @@ export default function HeroSection() {
 
                 {/* Bottom Description */}
                 <p className="text-gray-300 text-center max-w-2xl text-sm sm:text-base px-4">
-                    We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+                    {`We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!`}
                 </p>
             </div>
         </div>

@@ -63,7 +63,7 @@ export default function CoreIndustryServices() {
 
                             <div className='mt-5'>
                                 <button className="group relative inline-flex items-center gap-2 bg-[#8B5CF6] text-white pl-6 pr-2 py-2 rounded-full overflow-hidden transition-all hover:pr-6">
-                                    <span className="text-sm font-medium z-10">Let's Connect</span>
+                                    <span className="text-sm font-medium z-10">{`Let's Connect `}</span>
                                     <div className="bg-white rounded-full p-2 transition-transform group-hover:translate-x-1">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                             <line x1="7" y1="17" x2="17" y2="7"></line>

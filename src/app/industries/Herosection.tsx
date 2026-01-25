@@ -1,7 +1,9 @@
 import Header from '@/components/Header';
 import Image from 'next/image';
 import Maincontent from './maincontent';
-const HeroSection = ({ children }) => {
+import { PropsWithChildren } from 'react';
+
+const HeroSection = ({ children }: PropsWithChildren) => {
     const brands = [
         'winikon', 'temenos', 'SOFTWARE GROUP', 'winikon', 'Abler', 'avanza', 'temenos'
     ];

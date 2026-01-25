@@ -47,7 +47,7 @@ export default function FAQ() {
               </h2>
 
               <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-                We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+                {`We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!`}
               </p>
             </div>
           </div>

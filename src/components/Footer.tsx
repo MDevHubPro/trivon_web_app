@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'; // Assuming react-icons might be there, if not I'll use SVGs. I'll use SVGs to be safe.
 import Image from 'next/image';
 export default function Footer() {
   return (

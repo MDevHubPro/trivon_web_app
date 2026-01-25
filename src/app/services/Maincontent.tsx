@@ -15,10 +15,7 @@ export default function CustomDevHero() {
 
 
                     <div style={{ height: '100%', position: 'absolute', left: 0, right: 0, bottom: 0, width: "100%", display: 'flex', alignItems: 'center', justifyContent: 'center' }} className=' md:top-[50px]'>
-                        <Folder size={2} color="#5227FF" className="custom-folder"
-                            color="#5227FF"
-                            size={2}
-                        />
+                        <Folder size={2} color="#5227FF" className="custom-folder" />
                     </div>
                 </div>
             </div>

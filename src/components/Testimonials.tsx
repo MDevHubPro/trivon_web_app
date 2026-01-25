@@ -106,7 +106,7 @@ const ReviewCard = ({ testimonial }: { testimonial: Testimonial }) => (
       </div>
     </div>
     <p className="text-gray-300 text-lg leading-relaxed font-light">
-      "{testimonial.quote}"
+      {`"${testimonial.quote}"`}
     </p>
   </div>
 );

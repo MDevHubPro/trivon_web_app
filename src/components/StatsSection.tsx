@@ -8,9 +8,9 @@ export default function StatsSection() {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-20 pb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-white max-w-2xl leading-tight">
-                        Our work speaks through<br />
-                        numbers. Here's What we've<br />
-                        achieved so far.
+                        {`Our work speaks through
+                        numbers. Here's What we've
+                        achieved so far.`}
                     </h2>
 
                     {/* Team Avatar Badge */}

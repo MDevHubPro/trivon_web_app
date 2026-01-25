@@ -14,7 +14,7 @@ export default function ContactFormSection() {
                     <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] relative z-10">
                         {/* Form Side - 70% */}
                         <div className='p-8 md:p-12 lg:p-16 relative bg-[#111111]'>
-                            <h3 className="text-4xl md:text-5xl font-medium text-white mb-12 tracking-tight">Let's Talk</h3>
+                            <h3 className="text-4xl md:text-5xl font-medium text-white mb-12 tracking-tight">{`Let's Talk`}</h3>
                             <form className="space-y-8">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                                     <div className="space-y-2">

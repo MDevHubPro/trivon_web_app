@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-
 const baseServices = [
     {
         title: 'Website Dev',

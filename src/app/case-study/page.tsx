@@ -100,7 +100,7 @@ export default function CaseStudyPage() {
           {/* Featured Resources Section */}
           <div className="mb-24 ">
             <div className="flex md:flex-row flex-col justify-between items-end  mb-8">
-              <h2 className="text-[40px] md:text-[70px] font-bold text-white">Featured Resource's</h2>
+              <h2 className="text-[40px] md:text-[70px] font-bold text-white">{"Featured Resource's"}</h2>
               <p className="text-[16px] md:text-[21px] text-gray-500 max-w-2xl text-start hidden md:block">
                 Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering.
               </p>

@@ -58,7 +58,7 @@ export default function TechnologyStack() {
                         Technology <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">Stack</span>
                     </h2>
                     <p className="text-gray-500 md:text-[20px] text-[14px] max-w-[70%]">
-                        We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!
+                        {`We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!`}
                     </p>
                 </div>
 

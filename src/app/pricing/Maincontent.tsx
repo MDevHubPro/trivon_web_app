@@ -15,8 +15,6 @@ export default function CustomDevHero() {
                 <div className="relative rounded-[30px] z-[50] h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72">
                     <div style={{ height: '100%', position: 'absolute', left: 0, right: 0, bottom: 0, width: "100%", display: 'flex', alignItems: 'center', justifyContent: 'center' }} className=' md:top-[50px]'>
                         <Folder size={2} color="#5227FF" className="custom-folder"
-                            color="#5227FF"
-                            size={2}
                         />
                     </div>
                 </div>
