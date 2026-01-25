@@ -13,12 +13,17 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-pp-mori), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
+}
+
+h2,
+h3,
+p,
+span {
+  font-family: var(--font-pp-mori), sans-serif;
 }
 
 @layer utilities {
@@ -225,6 +230,7 @@ body {
   }
 
   body {
+    font-family: var(--font-pp-mori), sans-serif;
     @apply bg-background text-foreground;
   }
 }

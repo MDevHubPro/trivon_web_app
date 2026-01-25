@@ -65,12 +65,12 @@ export default function HomeHero() {
             <div className="container mx-auto px-4 md:px-8 relative z-10 pt-[28rem] md:pt-32">
                 <div className="flex w-full gap-12 items-center">
                     <div className="relative w-full text-center md:text-left ">
-                        <h1 className="text-3xl md:text-5xl font-medium text-white leading-[1.1] mb-4 md:mb-8 tracking-tight">
+                        <h1 className="text-3xl md:text-5xl font-mori font-medium text-white leading-[1.1] mb-4 md:mb-8 tracking-tight">
                             {/* Sequence 1: Main Title Start */}
                             <TypewriterText text="Designed to " className='bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_30%,rgba(255,255,255,0.5)_84.77%)] bg-clip-text text-transparent
 ' delay={0.2} speed={speed} />
 
-                            <span className=" relative block md:inline-block">
+                            <span className=" relative flex md:inline-block items-center justify-center gap-4">
                                 {/* Sequence 2: Continues with "Grow" */}
                                 <TypewriterText text="Grow"
                                     style={{
@@ -96,7 +96,7 @@ export default function HomeHero() {
                                         background: "linear-gradient(258.73deg, rgba(107,44,236,0.4) 7.48%, rgba(161,86,247,0.4) 92.51%)"
                                     }}
 
-                                    className="inline-flex items-center gap-2  border border-[#FFFFFF80] text-white text-sm px-3 py-1 md:py-2 rounded-full mb-4 bg-opacity-40"
+                                    className="inline-flex items-center gap-2  border border-[#FFFFFF80] text-white text-sm px-3 py-1 md:py-2 rounded-full md:mb-4 bg-opacity-40"
                                 >
                                     <div className='w-4 md:w-6 h-4 md:h-6 rounded-full flex items-center justify-center '
                                         style={{ background: 'linear-gradient(258.73deg, #6B2CEC 7.48%, #A156F7 92.51%)' }}
