@@ -1,100 +1,152 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function VisionMissionSection() {
     return (
-        <section className="py-24 bg-black relative overflow-hidden">
-            {/* Background Grid Pattern - Faint squares to match image */}
-            <div className="absolute inset-0 pointer-events-none opacity-5">
-                <svg width="100%" height="100%">
-                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" strokeWidth="0.5" />
-                        <rect x="0" y="0" width="10" height="10" fill="white" fillOpacity="0.2" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
+        <section className="relative min-h-screen lg:min-h-[1400px] bg-black text-white py-24 lg:py-32 overflow-hidden lg:px-0">
+            {/* 1. Background Purple Logo/Lines Image */}
+            <div className="absolute inset-x-0 top-0 h-[800px] bg-red-900 lg:h-[1000px] z-0 pointer-events-none opacity-40 lg:opacity-50   translate-y-[50px] lg:translate-y-[100px]">
+                <div className="relative w-[80%] h-full max-w-[1400px] bg-purple-900 top-[250px]">
+                    <Image
+                        src="/assets/vision/bg-logo-lines.png"
+                        alt="Background Lines"
+                        fill
+                        className="object-contain"
+                        priority
+                    />
+                </div>
             </div>
 
-            <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-6xl">
+            <div className="container mx-auto max-w-7xl relative z-10 h-full">
 
-                {/* Top Central Shield Icon */}
-                <div className="flex justify-center mb-12 relative z-20">
-                    <div className="relative w-32 h-36">
-                        {/* The Shield Hexagon Glow */}
-                        <div className="absolute inset-0 bg-purple-900/40 blur-2xl rounded-full"></div>
-                        {/* Hexagon Shape */}
-                        <svg viewBox="0 0 100 115" className="w-full h-full drop-shadow-[0_0_15px_rgba(139,92,246,0.6)]">
-                            <path d="M50 0 L95 25 L95 75 L50 100 L5 75 L5 25 Z" fill="#1a1a2e" stroke="#8B5CF6" strokeWidth="1" />
-                            {/* Inner Shield Icon */}
-                            <path d="M50 20 L80 35 V70 L50 90 L20 70 V35 Z" fill="none" stroke="#A855F7" strokeWidth="2" />
-                            <path d="M35 55 L45 65 L65 45" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                {/* 2. Top Card: Intro Text */}
+                <div className="flex justify-center lg:justify-end lg:mr-[20%] mb-16 lg:mt-20 bg-red-300 relative z-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="relative w-full max-w-[340px] h-[120px]"
+                    >
+                        <Image
+                            src="/assets/vision/card-bg.png"
+                            alt="Card Background"
+                            fill
+                            className="object-fill bg-green-300"
+                        />
+                        <div className="absolute inset-0 flex items-center px-8 lg:px-10">
+                            <p className="text-gray-300 text-[12px] lg:text-[13px] leading-relaxed">
+                                At Trivon, we have two distinct branches that cater to entire protocol lifecycle management.
+                            </p>
+                        </div>
+                    </motion.div>
+                </div>
 
-                        {/* Connection Line to Vision (Left) */}
-                        <svg className="absolute top-1/2 left-0 -translate-x-full w-48 h-24 pointer-events-none hidden lg:block" style={{ top: '60%' }}>
-                            <path d="M190 0 C 100 0, 100 100, 0 100" fill="none" stroke="#4c1d95" strokeWidth="1" strokeDasharray="5 5" />
-                            <circle cx="0" cy="100" r="3" fill="#8B5CF6" />
-                        </svg>
-
-                        {/* Connection Line to Mission (Right) */}
-                        <svg className="absolute top-1/2 right-0 translate-x-full w-48 h-24 pointer-events-none hidden lg:block" style={{ top: '60%' }}>
-                            <path d="M0 0 C 90 0, 90 50, 180 50" fill="none" stroke="#4c1d95" strokeWidth="1" strokeDasharray="5 5" />
-                            <circle cx="180" cy="50" r="3" fill="#8B5CF6" />
-                        </svg>
+                {/* 3. Arrows Junction Layer (Desktop only) */}
+                <div className="absolute left-[55%] top-[200px] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[600px] pointer-events-none hidden lg:block opacity-80">
+                    <Image
+                        src="/assets/vision/arrows-left-up.png"
+                        alt="Arrows Left Up"
+                        fill
+                        className="object-contain"
+                    />
+                    <div className="absolute inset-0 ">
+                        {/* <Image
+                            src="/assets/vision/arrow-down.png"
+                            alt="Arrow Down"
+                            fill
+                            className="object-contain"
+                        /> */}
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-16 items-start relative">
+                <div className="absolute left-[73%] top-[360px] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] pointer-events-none hidden lg:block opacity-80">
 
-                    {/* Vision Block */}
-                    <div className="relative">
-                        {/* Title Box with Gradient Border Left */}
-                        <div className="relative inline-block mb-6">
-                            <div className="bg-black border border-gray-800 rounded-lg px-8 py-4 relative z-10 overflow-hidden group">
-                                {/* Gradient shine effect on left */}
-                                <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-transparent via-blue-500 to-transparent"></div>
-                                <h3 className="text-3xl font-bold text-white">Our Vision</h3>
+                    <div className="absolute inset-0 ">
+                        <Image
+                            src="/assets/vision/arrow-down.png"
+                            alt="Arrow Down"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                </div>
+
+                {/* 4. Vision Block */}
+                <div className="relative z-20 mt-44 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+                    <div className="flex flex-col items-center -mt-24 lg:items-start lg:pl-[22%]">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative w-full max-w-[400px] h-[110px] lg:h-[120px] mb-8"
+                        >
+                            <Image
+                                src="/assets/vision/card-bg.png"
+                                alt="Heading Background"
+                                fill
+                                className="object-fill "
+                            />
+                            <div className="absolute inset-0 flex items-center px-10 lg:px-12">
+                                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white">
+                                    Our Vision
+                                </h2>
                             </div>
-                            {/* Glow under title */}
-                            <div className="absolute -inset-1 bg-blue-500/20 blur-lg rounded-lg -z-10"></div>
-                        </div>
+                        </motion.div>
 
-                        <p className="text-gray-400 text-sm leading-relaxed text-justify border-l border-gray-800 pl-6 py-2 relative">
-                            {/* Small connection line indicator */}
-                            <span className="absolute top-0 left-[-1px] w-1 h-8 bg-purple-500"></span>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="text-gray-400 bg-yellow-900 text-sm md:text-base  max-w-[400px] px-4 lg:px-0 lg:pl-6 lg:border-l lg:border-white/10 "
+                        >
                             Our Vision at Trivon is to advance the interoperable blockchain landscape through secure socio-technical innovations that cater specifically to the evolving needs of individuals, startups, and enterprises. We are committed to simplifying Decentralized Finance and making it more accessible, while ensuring our technologies contribute positively to a more transparent, privacy preserving, and conscious future.
-                        </p>
+                        </motion.p>
                     </div>
-
-                    {/* Mission Block - Shifted Down */}
-                    <div className="relative lg:mt-32">
-                        {/* Title Box with Gradient Border Right */}
-                        <div className="relative inline-block mb-6">
-                            <div className="bg-black border border-gray-800 rounded-lg px-8 py-4 relative z-10 overflow-hidden group">
-                                {/* Gradient shine effect on right */}
-                                <div className="absolute top-0 bottom-0 right-0 w-1 bg-gradient-to-b from-transparent via-blue-500 to-transparent"></div>
-                                <h3 className="text-3xl font-bold text-white">Our Mission</h3>
-                            </div>
-                            {/* Glow under title */}
-                            <div className="absolute -inset-1 bg-blue-500/20 blur-lg rounded-lg -z-10"></div>
-                        </div>
-
-                        <p className="text-gray-400 text-sm leading-relaxed text-justify border-l border-gray-800 pl-6 py-2 relative">
-                            {/* Small connection line indicator */}
-                            <span className="absolute bottom-0 left-[-1px] w-1 h-8 bg-blue-500"></span>
-                            Our mission at Trivon is to advance the interoperable blockchain landscape through secure socio-technical innovations that cater specifically to the evolving needs of individuals, startups, and enterprises. We are committed to simplifying Decentralized Finance and making it more accessible, while ensuring our technologies contribute positively to a more transparent, privacy preserving, and conscious future.
-                        </p>
-                    </div>
-
+                    <div className="hidden lg:block"></div>
                 </div>
 
-                {/* Connecting Lines Overlay for Desktop - connecting text blocks */}
-                <div className="absolute inset-x-0 bottom-0 h-full pointer-events-none hidden lg:block overflow-visible -z-0">
-                    {/* Line from Vision text bottom to... somewhere? Image shows complex wiring. Just generic connection hints. */}
+                {/* 5. Mission Block */}
+                <div className="relative z-20 mt-24 lg:mt-[10px] flex justify-center lg:justify-end lg:pr-[12%]">
+                    <div className="flex flex-col items-center lg:items-start max-w-[450px]">
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative w-full max-w-[380px] h-[110px] lg:h-[130px] mb-8"
+                        >
+                            <Image
+                                src="/assets/vision/card-bg.png"
+                                alt="Heading Background"
+                                fill
+                                className="object-fill"
+                            />
+                            <div className="absolute inset-0 flex items-center px-10 lg:px-12">
+                                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white">
+                                    Our Mission
+                                </h2>
+                            </div>
+                        </motion.div>
+
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="text-gray-400 text-sm md:text-base leading-relaxed max-w-[400px] px-4 lg:px-0 lg:pl-6 text-center lg:text-left"
+                        >
+                            Our mission at Trivon is to advance the interoperable blockchain landscape through secure socio-technical innovations that cater specifically to the evolving needs of individuals, startups, and enterprises. We are committed to simplifying Decentralized Finance and making it more accessible, while ensuring our technologies contribute positively to a more transparent, privacy preserving, and conscious future.
+                        </motion.p>
+                    </div>
                 </div>
 
             </div>
+
+            {/* Atmosphere Glows */}
+            <div className="absolute top-[20%] left-[-10%] w-[800px] h-[800px] bg-purple-900/[0.08] blur-[160px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[900px] h-[900px] bg-blue-900/[0.1] blur-[200px] rounded-full pointer-events-none -z-10" />
         </section>
     );
 }
