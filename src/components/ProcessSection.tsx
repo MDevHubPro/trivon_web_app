@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
+import Image from 'next/image';
 const steps = [
     {
         id: '01',
@@ -73,9 +73,9 @@ export default function ProcessSection() {
                             )}
 
                             {/* Large Arrow Graphic */}
-                            <div className="relative w-full aspect-square mb-6">
+                            <div className="relative w-full aspect-square mb-6 bg-[url('/assets/Union.svg')] bg-cover bg-center">
                                 {/* The Diagonal Arrow Shape */}
-                                <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                                {/* <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-[0_0_15px_rgba(139,92,246,0.2)]">
                                     <defs>
                                         <linearGradient id={`arrow-grad-${index}`} x1="0%" y1="100%" x2="100%" y2="0%">
                                             <stop offset="0%" stopColor="#2e1065" stopOpacity="1" />
@@ -96,7 +96,8 @@ export default function ProcessSection() {
                                     />
                                     <path d="M30 170 L130 70" stroke={`url(#arrow-grad-${index})`} strokeWidth="50" strokeLinecap="square" />
                                     <path d="M90 30 L170 30 L170 110" fill="none" stroke={`url(#arrow-grad-${index})`} strokeWidth="50" strokeLinecap="square" strokeLinejoin="miter" />
-                                </svg>
+                                </svg> */}
+                                {/* <Image src="/assets/Union.svg" alt="Union" width={100} height={100} /> */}
 
 
                                 {/* Number Overlay */}
@@ -106,7 +107,7 @@ export default function ProcessSection() {
                             </div>
 
                             {/* Content */}
-                            <div className="text-right px-2   flex flex-col items-end">
+                            <div className="text-right px-2 -translate-y-2/3  flex flex-col items-end">
                                 <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
                                 <p className="text-stone-400 text-xs  text-right max-w-[200px]">
                                     {step.description}

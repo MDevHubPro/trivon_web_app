@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function VisionMissionSection() {
     return (
-        <section className="relative min-h-screen lg:min-h-[1400px] bg-black text-white py-24 lg:py-32 overflow-hidden lg:px-0">
+        <section className="relative min-h-screen lg:min-h-[1400px] bg-black text-white  overflow-hidden lg:px-0">
             {/* 1. Background Purple Logo/Lines Image */}
             <div className="absolute inset-x-0 top-0 h-[800px] bg-red-900 lg:h-[1000px] z-0 pointer-events-none opacity-40 lg:opacity-50   translate-y-[50px] lg:translate-y-[100px]">
                 <div className="relative w-[80%] h-full max-w-[1400px] bg-purple-900 top-[250px]">
@@ -61,7 +61,7 @@ export default function VisionMissionSection() {
                     </div>
                 </div>
 
-                <div className="absolute left-[73%] top-[360px] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] pointer-events-none hidden lg:block opacity-80">
+                <div className="absolute left-[73%] top-[360px] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[420px] pointer-events-none hidden lg:block opacity-80">
 
                     <div className="absolute inset-0 ">
                         <Image
