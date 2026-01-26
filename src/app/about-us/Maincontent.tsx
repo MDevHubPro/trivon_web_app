@@ -36,8 +36,14 @@ const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "", style =
         </motion.span>
     );
 };
+type AboutSectionProps = {
+  heading_one: string
+  heading_two: string
+  text: string
+  main_heading: string
+}
 
-export default function AboutSection({ heading_one, heading_two, text, main_heading }) {
+export default function AboutSection({ heading_one, heading_two, text, main_heading }:AboutSectionProps) {
     return (
         <section className="pt-32 pb-24 relative overflow-hidden bg-black">
             {/* Background 'ABOUT US' Watermark */}
