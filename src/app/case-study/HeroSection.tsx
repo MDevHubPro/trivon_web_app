@@ -62,7 +62,7 @@ const HeroSection = () => {
             </div>
             <div className="hidden md:flex items-center justify-between gap-8 relative w-full opacity-40 overflow-hidden">
 
-                <BrandMarquee brands={brands} />
+                <BrandMarquee  />
             </div>
         </main>
     )

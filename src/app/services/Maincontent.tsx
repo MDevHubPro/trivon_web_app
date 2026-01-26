@@ -140,7 +140,7 @@ export default function CustomDevHero() {
                 <div className="absolute bottom-10 left-4 sm:left-10 md:left-20 w-32 h-32 sm:w-40 sm:h-40 bg-gray-700 rounded-full opacity-10 blur-3xl"></div>
 
             </div>
-            <BrandMarquee brands={brands} className="!absolute !-bottom-10 !z-10" />
+            <BrandMarquee className="!absolute !-bottom-10 !z-10" />
         </>
     );
 }

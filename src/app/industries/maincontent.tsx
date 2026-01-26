@@ -4,9 +4,16 @@ import React from 'react';
 import Image from "next/image";
 import { motion } from 'framer-motion';
 import BrandMarquee from "@/components/BrandMarquee";
+type TypewriterTextProps = {
+  text: string
+  delay?: number
+  speed?: number
+  className?: string
+  style?: React.CSSProperties
+}
 
 // --- Reusable Typewriter Component ---
-const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "", style = {} }) => {
+const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "", style = {} }:TypewriterTextProps) => {
     const letters = Array.from(text);
     const container = {
         hidden: { opacity: 1 },
@@ -100,7 +107,7 @@ const Maincontent = () => {
 
             {/* Marquee Section */}
             <div className="hidden md:flex items-center justify-between gap-8 relative w-full opacity-40 overflow-hidden mt-12">
-                <BrandMarquee brands={brands} />
+                <BrandMarquee />
             </div>
         </>
     );
