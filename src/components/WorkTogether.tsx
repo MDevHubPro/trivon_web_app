@@ -2,33 +2,34 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 const baseServices = [
     {
         title: 'Website Dev',
         desc: 'help you to build website company that is modern, user friendly, good CEO, and Clean design',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-        visual: 'web',
+        visual: '/assets/webdev2.png',
         type: 'purple'
     },
     {
         title: 'UI/UX Design',
         desc: 'help you to build website company that is modern, user friendly, good CEO, and Clean design',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
-        visual: 'ui',
+        visual: '/assets/uiux.png',
         type: 'purple'
     },
     {
         title: 'Logo Branding',
         desc: 'help you to build website company that is modern, user friendly, good CEO, and Clean design',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg',
-        visual: 'branding',
+        visual: '/assets/logobranding.png',
         type: 'dark'
     },
     {
         title: 'Shopify Website',
         desc: 'help you to build website company that is modern, user friendly, good CEO, and Clean design',
         icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM6onG0BTCip21uyKDKTTaMVp62LNJYTLV5A&s',
-        visual: 'shopify',
+        visual: '/assets/shopify.png',
         type: 'dark'
     }
 ];
@@ -130,105 +131,110 @@ export default function WorkTogether() {
                         {services.map((service, i) => (
                             <div
                                 key={i}
-                                className={`flex-shrink-0 w-[320px] transition-transform duration-500 ${i % 2 !== 0 ? 'mt-16' : 'mt-0'}`} // Stagger Effect
+                                className={`flex-shrink-0 w-[320px] transition-transform duration-500 ${i % 2 !== 0 ? 'mt-16' : 'mt-0'
+                                    }`}
                             >
-                                <div className="bg-[#0f0f13] border border-[#1f1f23] rounded-3xl p-8 h-[460px] flex flex-col relative overflow-hidden group hover:border-purple-500/50 transition-colors duration-300">
+                                {/* The Gradient Border Container */}
+                                <div
+                                    className="p-[2px] rounded-[24px] transition-all duration-300 group"
+                                    style={{
+                                        background: `linear-gradient(66.83deg, #A156F7 -3.68%, rgba(161, 86, 247, 0) 42.16%)`,
+                                    }}
+                                >
+                                    {/* The Inner Card Content */}
+                                    <div
+                                        className="bg-[#190E26] rounded-[22px] p-8 h-[460px] flex flex-col relative overflow-hidden transition-colors duration-300"
+                                        style={{
+                                            backgroundImage: `url('${service.visual}')`,
+                                            backgroundPosition: 'center',
+                                            backgroundSize: 'cover'
+                                        }}
+                                    >
+                                        {/* Icon top left */}
+                                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                                            <Image
+                                                src={'/assets/browsing.svg'}
+                                                alt=""
+                                                className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity"
+                                                width={30}
+                                                height={30}
+                                            />
+                                        </div>
 
-                                    {/* Icon top left */}
-                                    <div className="w-12 h-12 rounded-full bg-[#1a1a2e] border border-gray-800 flex items-center justify-center mb-6 shadow-inner">
-                                        <img src={service.icon} alt="" className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
-                                    </div>
+                                        {/* Content */}
+                                        <div className="relative z-10">
+                                            <h3 className="text-2xl font-bold text-white mb-2">
+                                                {service.title.split(' ')[0]} <span className="text-[#8B5CF6]">{service.title.split(' ').slice(1).join(' ')}</span>
+                                            </h3>
+                                            <p className="text-gray-500 text-xs leading-relaxed mb-8 h-16 line-clamp-3 pb-9">
+                                                {service.desc}
+                                            </p>
 
-                                    {/* Content */}
-                                    <div className="relative z-10">
-                                        <h3 className="text-2xl font-bold text-white mb-2">
-                                            {/* Style the second word purple if 2 words, or logic for coloring */}
-                                            {service.title.split(' ')[0]} <span className="text-[#8B5CF6]">{service.title.split(' ').slice(1).join(' ')}</span>
-                                        </h3>
-                                        <p className="text-gray-500 text-xs leading-relaxed mb-8 h-16 line-clamp-3 pb-9">
-                                            {service.desc}
-                                        </p>
+                                            <button className="flex items-center gap-2 bg-[#FFFFFF1A] hover:bg-[#252538] text-gray-300 text-sm font-medium px-5 py-2 rounded-full border border-gray-800 transition-colors mb-4 group-hover:border-purple-500/30">
+                                                GET STARTED
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                                        <button className="flex items-center gap-2 bg-[#1a1a2e] hover:bg-[#252538] text-gray-300 text-[10px] font-bold px-5 py-2.5 rounded-full border border-gray-800 transition-colors mb-4 group-hover:border-purple-500/30">
-                                            GET STARTED
-                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                                        </button>
-                                    </div>
-
-                                    {/* Visual/Illustration at Bottom */}
-                                    <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none">
-                                        {/* UI Visual */}
-                                        {service.visual === 'ui' && (
-                                            <div className="w-full h-full flex flex-col justify-end px-6">
-                                                <div className="bg-[#1e1e26] rounded-t-xl p-3 border-t border-x border-gray-800 shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform">
-                                                    <div className="flex gap-2 mb-3">
-                                                        <div className="w-8 h-8 rounded-full bg-gray-700"></div>
-                                                        <div className="space-y-1">
-                                                            <div className="w-12 h-1.5 bg-gray-700 rounded"></div>
-                                                            <div className="w-8 h-1.5 bg-gray-700 rounded"></div>
+                                        {/* Visual/Illustration logic - Matching your baseServices titles */}
+                                        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none">
+                                            {/* {service.title.includes('UI/UX') && (
+                                                <div className="w-full h-full flex flex-col justify-end px-6">
+                                                    <div className="bg-[#1e1e26] rounded-t-xl p-3 border-t border-x border-gray-800 shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform">
+                                                        <div className="flex gap-2 mb-3">
+                                                            <div className="w-8 h-8 rounded-full bg-gray-700"></div>
+                                                            <div className="space-y-1">
+                                                                <div className="w-12 h-1.5 bg-gray-700 rounded"></div>
+                                                                <div className="w-8 h-1.5 bg-gray-700 rounded"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full h-16 bg-gray-800/50 rounded grid gap-2 p-2">
+                                                            <div className="w-full h-full bg-gray-700/20 rounded"></div>
                                                         </div>
                                                     </div>
-                                                    <div className="w-full h-16 bg-gray-800/50 rounded grid gap-2 p-2">
-                                                        <div className="w-full h-full bg-gray-700/20 rounded"></div>
+                                                </div>
+                                            )} */}
+                                            {/* 
+                                            {service.title.includes('Logo') && (
+                                                <div className="w-full h-full flex items-end justify-center pb-0">
+                                                    <div className="w-32 h-32 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-xl transform rotate-12 translate-y-8 border border-gray-600 relative shadow-2xl group-hover:rotate-6 transition-transform">
+                                                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border border-gray-400"></div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        )}
+                                            )}
 
-                                        {/* Branding Visual */}
-                                        {service.visual === 'branding' && (
-                                            <div className="w-full h-full flex items-end justify-center pb-0">
-                                                <div className="w-32 h-32 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-xl transform rotate-12 translate-y-8 border border-gray-600 relative shadow-2xl group-hover:rotate-6 transition-transform">
-                                                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border border-gray-400"></div>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Shopify Visual */}
-                                        {service.visual === 'shopify' && (
-                                            <div className="w-full h-full flex items-end justify-center translate-y-4 group-hover:translate-y-2 transition-transform">
-                                                <div className="relative">
-                                                    {/* Bag Handle */}
-                                                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 border-4 border-[#333] rounded-full"></div>
-                                                    {/* Bag Body */}
-                                                    <div className="w-28 h-28 bg-[#222] rounded-lg border border-gray-800 flex items-center justify-center relative z-10 skew-x-2">
-                                                        <span className="text-4xl font-bold text-gray-700">S</span>
+                                            {service.title.includes('Shopify') && (
+                                                <div className="w-full h-full flex items-end justify-center translate-y-4 group-hover:translate-y-2 transition-transform">
+                                                    <div className="relative">
+                                                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 border-4 border-[#333] rounded-full"></div>
+                                                        <div className="w-28 h-28 bg-[#222] rounded-lg border border-gray-800 flex items-center justify-center relative z-10 skew-x-2">
+                                                            <span className="text-4xl font-bold text-gray-700">S</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        )}
+                                            )}
 
-                                        {/* Web Dev Visual */}
-                                        {service.visual === 'web' && (
-                                            <div className="w-full h-full flex flex-col justify-end px-4">
-                                                <div className="bg-[#1e1e26] h-32 rounded-t-xl border border-gray-700 translate-y-4 group-hover:translate-y-0 transition-transform">
-                                                    <div className="h-6 border-b border-gray-800 flex items-center gap-1.5 px-3 bg-[#15151a] rounded-t-xl">
-                                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
-                                                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
-                                                        <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-                                                    </div>
-                                                    <div className="p-3">
-                                                        <div className="w-full h-4 bg-gray-800 rounded mb-2"></div>
-                                                        <div className="w-2/3 h-4 bg-gray-800 rounded"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Fade Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f13] via-transparent to-transparent h-20 bottom-0 pointer-events-none"></div>
+                                            {service.title.includes('Website Dev') && (
+                                                <div className="w-full h-full flex flex-col justify-end px-4">
+                                                    {/* Ensure this path is correct in your public folder */}
+                                            {/* <Image src={'/assets/web-dev.png'} width={300} height={300} alt="Web Dev" />
+                                        </div>
+                                            )} */}
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         ))}
                     </motion.div>
                 </div>
 
-            </div>
+            </div >
 
             {/* Existing Marquee (Kept as is) */}
-            <div className="w-full bg-gradient-to-r from-[#7000ff] to-[#bd00ff] py-4 transform -rotate-1 scale-110 shadow-[0_0_30px_rgba(139,92,246,0.5)] border-y border-white/20 mt-20 relative z-20">
+            < div className="w-full bg-gradient-to-r from-[#7000ff] to-[#bd00ff] py-4 transform -rotate-1 scale-110 shadow-[0_0_30px_rgba(139,92,246,0.5)] border-y border-white/20 mt-20 relative z-20" >
                 <div className="flex whitespace-nowrap overflow-hidden relative">
                     <motion.div
                         className="flex gap-16 items-center"
@@ -243,7 +249,7 @@ export default function WorkTogether() {
                         ))}
                     </motion.div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
