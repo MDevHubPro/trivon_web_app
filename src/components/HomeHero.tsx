@@ -96,7 +96,7 @@ export default function HomeHero() {
                                         background: "linear-gradient(258.73deg, rgba(107,44,236,0.4) 7.48%, rgba(161,86,247,0.4) 92.51%)"
                                     }}
 
-                                    className="inline-flex items-center gap-2  border border-[#FFFFFF80] text-white text-sm px-3 py-1 md:py-2 rounded-full md:mb-4 bg-opacity-40"
+                                    className="ml-4 inline-flex items-center gap-2  border border-[#FFFFFF80] text-white text-sm px-3 py-1 md:py-2 rounded-full md:mb-4 bg-opacity-40"
                                 >
                                     <div className='w-4 md:w-6 h-4 md:h-6 rounded-full flex items-center justify-center '
                                         style={{ background: 'linear-gradient(258.73deg, #6B2CEC 7.48%, #A156F7 92.51%)' }}
@@ -130,7 +130,7 @@ export default function HomeHero() {
                                 <div className='flex'>
                                     {/* "Your Business" line */}
                                     <span className="block mt-2">
-                                        <TypewriterText text="Your" className='bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent' delay={businessStart} speed={speed} />
+                                        <TypewriterText text="Your" className='mr-4 bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent' delay={businessStart} speed={speed} />
                                     </span>
                                     <span className="block mt-2">
                                         <TypewriterText text=" Business"

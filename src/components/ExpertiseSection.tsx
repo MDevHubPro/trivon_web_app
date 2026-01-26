@@ -19,6 +19,7 @@ const ExpertiseSection = () => {
 
             <div className="relative z-10">
                 {/* Top Header Row */}
+                <div className="bg-[url('/assets/exp-bg.png')] bg-no-repeat lg:bg-[length:1218px_1114px]">
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-12 md:mb-20 items-start px-4 md:px-0 md:items-end">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
                         <motion.p
@@ -167,6 +168,7 @@ const ExpertiseSection = () => {
                             </motion.div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>

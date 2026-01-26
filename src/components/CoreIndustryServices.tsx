@@ -52,13 +52,23 @@ export default function CoreIndustryServices() {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
 
                     {/* Left Sticky Section */}
-                    <div className="lg:w-1/3 relative">
-                        <div className="lg:sticky lg:top-32 flex flex-col justify-between ">
-                            <h2 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-                                <span className="block text-gray-400">Our Core</span>
-                                <span className="block text-gray-400">Industry</span>
-                                <span className="block text-white">Services</span>
+                    <div className=" lg:w-1/3 relative ">
+                        <div className="lg:sticky lg:top-32 flex flex-col justify-between bg-[url('/assets/Heading-Arrows-1.png')] bg-no-repeat lg:bg-[length:528px_461px]">
+                           <h2 className="text-[71px] leading-[80px] tracking-[-0.03em] font-semibold">
+                            <span className="block text-gray-400">Our Core</span>
+                            <span className="block text-gray-400">Industry</span>
+                            <span
+                                className="
+                                block
+                                bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_0%,#FFFFFF80_100%)]
+                                bg-clip-text
+                                text-transparent
+                                "
+                            >
+                                Services
+                            </span>
                             </h2>
+
 
 
                             <div className='mt-5'>
@@ -79,13 +89,16 @@ export default function CoreIndustryServices() {
                     <div className="lg:w-2/4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {services.map((service, index) => (
-                                <motion.div
+                                 <div
                                     key={index}
+                                    className="p-2.5 bg-gradient-to-r from-[#6B2CEC] to-[#A156F7] mb-8"
+                                >
+                                <motion.div                                    
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-50px" }}
                                     transition={{ duration: 0.5, delay: index % 2 * 0.1 }}
-                                    className="bg-white rounded-3xl p-8 flex flex-col justify-between min-h-[400px] relative overflow-hidden group hover:shadow-[0_0_40px_rgba(139,92,246,0.3)] transition-shadow duration-300"
+                                    className="bg-white p-8 flex flex-col justify-between min-h-[400px] relative overflow-hidden group hover:shadow-[0_0_40px_rgba(139,92,246,0.3)] transition-shadow duration-300"
                                 >
                                     <div className="flex justify-between items-start mb-8">
                                         <span className="bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-xs font-bold tracking-widest">
@@ -125,6 +138,7 @@ export default function CoreIndustryServices() {
                                     {/* Hover Effect Light */}
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500 opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-500 rounded-bl-full pointer-events-none"></div>
                                 </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>
