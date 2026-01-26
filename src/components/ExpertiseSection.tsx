@@ -36,13 +36,15 @@ const ExpertiseSection = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text[71px] font-semibold leading-[1.1] tracking-tight bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_0%,#FFFFFF80_100%)]
+                                bg-clip-text
+                                text-transparent"
                         >
                             Our expertise <br />
-                            <span className="text-white">provides the</span> <br />
-                            <span className="text-gray-400">foundation for your</span> <br />
-                            <span className="text-gray-400">project to be set up</span> <br />
-                            <span className="text-gray-400">for success.</span>
+                            <span >provides the</span> <br />
+                            <span >foundation for your</span> <br />
+                            <span >project to be set up</span> <br />
+                            <span >for success.</span>
                         </motion.h2>
                     </div>
                 </div>

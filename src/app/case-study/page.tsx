@@ -101,7 +101,9 @@ export default function CaseStudyPage() {
           {/* Featured Resources Section */}
           <div className="mb-24 ">
             <div className="flex md:flex-row flex-col justify-between items-end  mb-8">
-              <h2 className="text-[40px] md:text-[70px] font-bold text-white">{"Featured Resource's"}</h2>
+              <h2 className="text-[40px] md:text-[70px] font-bold bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_0%,#FFFFFF80_100%)]
+                                bg-clip-text
+                                text-transparent">{"Featured Resource's"}</h2>
               <p className="text-[16px] md:text-[21px] text-gray-500 max-w-2xl text-start hidden md:block">
                 Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering.
               </p>
@@ -156,7 +158,7 @@ export default function CaseStudyPage() {
               {/* Sidebar List */}
               <div className="col-span-1 space-y-4">
                 {resources.map((i) => (
-                  <div key={i.id} className="rounded-xl transition cursor-pointer flex gap-4 h-[125px]">
+                  <div key={i.id} className="rounded-xl transition cursor-pointer flex gap-4 h-[125px]  hover:shadow-[0_10px_40px_rgba(161,86,247,0.35)]">
                     <div className="w-2/3   overflow-hidden relative">
                       <Image
                         src={i.image}
@@ -206,9 +208,9 @@ export default function CaseStudyPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                   className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 border ${selectedCategory === cat
-                                ? 'bg-[#1e102e] border-[#8B5CF6] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
-                                : 'bg-[#111] border-[#1f1f1f] text-gray-500 hover:border-gray-700 hover:text-gray-300'
+                   className={`px-10 py-3 rounded-full text-sm font-semibold transition-all duration-300 border ${selectedCategory === cat
+                                ? 'bg-[#1e102e] border-[#FFFFFF80] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+                                : 'bg-[#111] border-[#1f1f1f] text-gray-500 hover:text-white hover:border-[#FFFFFF80] hover:bg-[linear-gradient(90deg,rgba(107,44,236,0.4),rgba(161,86,247,0.4))] active:text-white active:border-[#FFFFFF80] active:bg-[linear-gradient(90deg,rgba(107,44,236,0.4),rgba(161,86,247,0.4))]'
                                 }`}
                   // className={`px-6 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all border ${selectedCategory === cat
                   //   ? 'bg-purple-600 border-purple-600 text-white'

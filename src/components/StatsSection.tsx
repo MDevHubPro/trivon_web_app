@@ -47,7 +47,7 @@ export default function StatsSection() {
                             </h3>
 
                             {/* Description Text */}
-                            <p className="text-gray-500 text-[24px] text-justify">
+                            <p className="text-gray-500 text-[24px]">
                                 Trivon has secured over $3.2 billion in Total Value Locked across multiple blockchain ecosystems. Our robust audit methodologies and security-first mindset ensure that protocols remain resilient, enabling projects to grow confidently in an increasingly complex Web3 landscape.
                             </p>
                         </div>

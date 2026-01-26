@@ -52,17 +52,16 @@ export default function CoreIndustryServices() {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
 
                     {/* Left Sticky Section */}
-                    <div className=" lg:w-1/3 relative ">
-                        <div className="lg:sticky lg:top-32 flex flex-col justify-between bg-[url('/assets/Heading-Arrows-1.png')] bg-no-repeat lg:bg-[length:528px_461px]">
-                           <h2 className="text-[71px] leading-[80px] tracking-[-0.03em] font-semibold">
-                            <span className="block text-gray-400">Our Core</span>
-                            <span className="block text-gray-400">Industry</span>
+                    <div className=" lg:w-2/4 relative ">
+                        <div className="lg:sticky lg:top-32 flex flex-col justify-between bg-[url('/assets/Heading-Arrows-1.png')] bg-no-repeat lg:bg-[length:528px_461px] lg:h-[500px]">
+                           <h2 className="text-[71px] leading-[80px] tracking-[-0.03em] font-semibold bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_0%,#FFFFFF80_100%)]
+                                bg-clip-text
+                                text-transparent">
+                            <span className="block">Our Core</span>
+                            <span className="block">Industry</span>
                             <span
                                 className="
-                                block
-                                bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_0%,#FFFFFF80_100%)]
-                                bg-clip-text
-                                text-transparent
+                                block                                
                                 "
                             >
                                 Services
