@@ -27,7 +27,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex flex-1 items-center justify-center gap-2">
-            {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study'].map((item) => {
+            {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study', 'Contact'].map((item) => {
               const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
               const isActive = pathname === path;
 
