@@ -46,13 +46,13 @@ export default function BrandInvestSection() {
                     </h1>
 
                     <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto">
-                        Flexible packages designed to fit every business need. Choose the plan that's right for you and get high-quality digital solutions with full support and ownership.
+                        {`Flexible packages designed to fit every business need. Choose the plan that's right for you and get high-quality digital solutions with full support and ownership.`}
                     </p>
                 </div>
 
                 {/* Service Buttons */}
                 <div className="flex flex-wrap justify-center gap-4">
-                    {services.map((service) => (
+                    {services.map((service,id) => (
                         <button
                             onClick={() => setActiveButton(service)}
                             className={`px-8 py-3 rounded-full font-medium text-white border  ${activeButton === service
@@ -67,6 +67,7 @@ export default function BrandInvestSection() {
                                     ? '1px solid #FFFFFF80'
                                     : '1px solid rgba(161, 86, 247, 0.3)'
                             }}
+                            key={id}
                         >
                             {service}
                         </button>
