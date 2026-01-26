@@ -3,9 +3,15 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Section_Two from './Section_Two';
-
+type TypewriterTextProps = {
+  text: string
+  delay?: number
+  speed?: number
+  className?: string
+  style?: React.CSSProperties
+}
 // --- Reusable Typewriter Component ---
-const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "" }: { text: string, delay?: number, speed?: number, className?: string }) => {
+const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "",style = {} }: TypewriterTextProps) => {
     const letters = Array.from(text);
 
     const container = {
@@ -159,8 +165,8 @@ export default function HomeHero() {
                             <button className="h-8 md:h-10 w-[160px] pl-6  pr-2 rounded-full bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] text-white font-medium text-sm flex items-center justify-between gap-2">
                                 Get Started
                                 <div className="bg-white rounded-full p-2">
-                                    <Image src={'/assets/arrow.svg'} width={12} height={12} className='hidden md:block' />
-                                    <Image src={'/assets/arrow.svg'} width={10} height={10} className='md:hidden block' />
+                                    <Image src={'/assets/arrow.svg'} width={12} height={12} className='hidden md:block'   alt="Arrow" />
+                                    <Image src={'/assets/arrow.svg'} width={10} height={10} className='md:hidden block'   alt="Arrow" />
                                 </div>
                             </button>
                         </motion.div>

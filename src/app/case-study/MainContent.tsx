@@ -3,9 +3,14 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
+type TypewriterTextProps = {
+  text: string
+  delay?: number
+  speed?: number
+  className?: string
+}
 // --- Typewriter Component (Ensure this is available in your file) ---
-const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "" }) => {
+const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "" }:TypewriterTextProps) => {
     const letters = Array.from(text);
 
     const container = {
