@@ -3,9 +3,7 @@ import Image from 'next/image';
 import BrandMarquee from '@/components/BrandMarquee';
 import Maincontent from './Maincontent';
 const HeroSection = () => {
-    const brands = [
-        'winikon', 'temenos', 'SOFTWARE GROUP', 'winikon', 'Abler', 'avanza', 'temenos'
-    ];
+
     return (
         <>
             <div className='relative  h-[619px]  w-full bg-cover bg-center bg-no-repeat'>
@@ -19,7 +17,7 @@ const HeroSection = () => {
 
                 {/* Hero Secti
       on */}
-                <Maincontent heading_one={"About Us"} heading_two={"Trivon Digital"} text={"Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering and DeFi innovation for more inclusive, reliable and sustainable systems"} main_heading={"About Us"} brands={brands} />
+                <Maincontent heading_one={"About Us"} heading_two={"Trivon Digital"} text={"Trivon is a security-first blockchain consulting company that provides a range of services related to Trivon technology with strong emphasis on security engineering and DeFi innovation for more inclusive, reliable and sustainable systems"} main_heading={"About Us"} />
 
 
             </div>

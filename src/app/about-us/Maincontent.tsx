@@ -31,7 +31,7 @@ const TypewriterText = ({ text, delay = 0, speed = 0.05, className = "", style =
     );
 };
 
-export default function AboutSection({ heading_one, heading_two, text, main_heading, brands }) {
+export default function AboutSection({ heading_one, heading_two, text, main_heading }) {
     return (
         <section className="pt-32 pb-24 relative overflow-hidden bg-black">
             {/* Background 'ABOUT US' Watermark */}
@@ -114,14 +114,18 @@ export default function AboutSection({ heading_one, heading_two, text, main_head
                                 />
                             </h2>
                         </div>
+
                         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600/10 blur-[80px] rounded-full pointer-events-none"></div>
+
                     </div>
+
+                </div>
+                <div className="hidden md:flex items-center justify-between gap-8 relative w-full overflow-hidden mt-10">
+                    <BrandMarquee />
                 </div>
             </div>
 
-            <div className="hidden md:flex items-center justify-between gap-8 relative w-full opacity-40 overflow-hidden mt-10">
-                <BrandMarquee brands={brands} />
-            </div>
+
         </section>
     );
 }
