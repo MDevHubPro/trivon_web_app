@@ -6,7 +6,7 @@ export default function Section_Two() {
         <footer className="hidden md:block h-[100px]  text-white px-6">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Left Section - Social Links */}
-                <div className="flex items-center justify-center gap-6">
+                <div className="flex items-left justify-center gap-6">
                     <span className="text-sm text-[#FFFFFF80] ">Follow For More                         <span className="inline-block ml-4 h-1 w-6 bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] rounded-full" />
 
                     </span>

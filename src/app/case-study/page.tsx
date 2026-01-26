@@ -10,7 +10,8 @@ import FeaturedResourcesSection from '@/components/FeaturedResourcesSection';
 import Image from 'next/image';
 import HeroSection from './HeroSection';
 import Testimonials from '@/components/Testimonials';
-const categories = ['Legal Analysis', 'Market Analysis', 'Virtual Assets', 'Banking', 'NBA', 'Animated'];
+// const categories = ['Legal Analysis', 'Market Analysis', 'Virtual Assets', 'Banking', 'NBA', 'Animated'];
+const categories = ['Logo Design', 'Web Design', 'E-Commerce', 'Branding', 'SEO', 'Animation'];
 
 const caseStudies = [
   {
@@ -199,15 +200,20 @@ export default function CaseStudyPage() {
 
           {/* Filters */}
           <div className="mb-12 overflow-x-auto pb-4">
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3"> */}
+            <div className="flex flex-wrap gap-4 mb-20 w-full justify-between">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all border ${selectedCategory === cat
-                    ? 'bg-purple-600 border-purple-600 text-white'
-                    : 'bg-[#111] border-gray-800 text-gray-400 hover:border-purple-500/50 hover:text-white'
-                    }`}
+                   className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 border ${selectedCategory === cat
+                                ? 'bg-[#1e102e] border-[#8B5CF6] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+                                : 'bg-[#111] border-[#1f1f1f] text-gray-500 hover:border-gray-700 hover:text-gray-300'
+                                }`}
+                  // className={`px-6 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all border ${selectedCategory === cat
+                  //   ? 'bg-purple-600 border-purple-600 text-white'
+                  //   : 'bg-[#111] border-gray-800 text-gray-400 hover:border-purple-500/50 hover:text-white'
+                  //   }`}
                 >
                   {cat}
                 </button>

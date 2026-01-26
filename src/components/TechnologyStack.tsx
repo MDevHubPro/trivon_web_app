@@ -54,8 +54,8 @@ export default function TechnologyStack() {
             <div className="container mx-auto px-4 md:px-8">
 
                 <div className="mb-16 flex flex-col  gap-9">
-                    <h2 className="text-5xl xl:text-[170px] font-bold text-white mb-4">
-                        Technology <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">Stack</span>
+                    <h2 className="text-5xl xl:text-[170px] font-semibold text-white mb-4">
+                        Technology <span className="bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent">Stack</span>
                     </h2>
                     <p className="text-gray-500 md:text-[20px] text-[14px] max-w-[70%]">
                         {`We provide you with a convenient and reliable platform for effective business management. Forget about complexities we'll handle everything for your convenience!`}

@@ -30,14 +30,14 @@ export default function StatsSection() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {[
-                        { val: '3.2B+', label: 'TVL Secured', color: 'text-[#8B5CF6]' },
-                        { val: '300+', label: 'Vulnerabilities', color: 'text-[#8B5CF6]' },
-                        { val: '65%', label: 'High Impact', color: 'text-[#8B5CF6]' },
-                        { val: '250+', label: 'Smart Contracts', color: 'text-[#8B5CF6]' }
+                        { val: '3.2B+', label: 'TVL Secured', color: 'bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent ' },
+                        { val: '300+', label: 'Vulnerabilities', color: 'bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent ' },
+                        { val: '65%', label: 'High Impact', color: 'bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent ' },
+                        { val: '250+', label: 'Smart Contracts', color: 'bg-[linear-gradient(258.73deg,#6B2CEC_7.48%,#A156F7_92.51%)] bg-clip-text text-transparent ' }
                     ].map((stat, i) => (
                         <div key={i} className="group">
                             {/* Number */}
-                            <div className={`text-[70px] font-bold mb-4 ${stat.color} drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]`}>
+                            <div className={`text-[75px] font-regular mb-4 ${stat.color} drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]`}>
                                 {stat.val}
                             </div>
 
