@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import Invest from './Invest';
 const packages = [
     {
         name: 'Basic Logo Package',
@@ -104,11 +104,11 @@ export default function PricingSection() {
     const displayPackages = packages;
 
     return (
-        <section className="py-24 bg-black font-sans">
+        <section className="py-8 bg-black font-sans">
             <div className="container mx-auto px-4 md:px-8">
 
                 {/* Filters */}
-                <div className="flex flex-wrap gap-4 mb-20 justify-center">
+                {/* <div className="flex flex-wrap gap-4 mb-20 justify-center">
                     {categories.map((cat) => (
                         <button
                             key={cat}
@@ -121,11 +121,11 @@ export default function PricingSection() {
                             {cat}
                         </button>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Layout: Exact 3 Top, 2 Bottom Centered */}
                 <div className="max-w-6xl mx-auto space-y-8">
-
+                    <Invest />
                     {/* Top Row: 3 Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {displayPackages.slice(0, 3).map((pkg, i) => (
@@ -152,11 +152,19 @@ function PricingCard({ pkg }: { pkg: any }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -10, borderColor: 'rgba(139,92,246,0.5)', boxShadow: '0 0 30px rgba(139,92,246,0.1)' }}
+            whileHover={{ y: -10, boxShadow: '0 0 30px rgba(139,92,246,0.2)' }}
             transition={{ duration: 0.3 }}
-            className="bg-[#0D0616] border border-[#2b1b3d] rounded-[2rem] p-8 relative flex flex-col items-center text-center group"
+            /* 1. Set border to 2px and transparent so the background gradient shows through */
+            className="border-2 border-transparent backdrop-blur-[23px] rounded-[2rem] p-8 relative flex flex-col items-center text-center group"
+            style={{
+                /* 2. The first gradient is your solid fill color (#180D25) */
+                /* 3. The second gradient is your border source */
+                backgroundImage: `linear-gradient(#180D25, #180D25), linear-gradient(66.83deg, #A156F7 -3.68%, rgba(161, 86, 247, 0) 42.16%)`,
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box',
+            }}
         >
-            <h3 className="text-xl font-bold text-white mb-6">
+            <h3 className="text-3xl uppercase font-bold text-white mb-6">
                 <span className="text-[#A855F7]">{pkg.highlightWord}</span> {pkg.name.replace(pkg.highlightWord, '')}
             </h3>
 
@@ -168,7 +176,9 @@ function PricingCard({ pkg }: { pkg: any }) {
                 <span className="text-xl mt-1">.00</span>
             </div>
 
-            <button className="w-full max-w-[200px] bg-gradient-to-r from-[#8B5CF6] to-[#C084FC] text-white py-3 rounded-full text-sm font-bold flex items-center justify-center gap-3 mb-4 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_25px_rgba(139,92,246,0.6)] transition-shadow">
+            <button className="w-full max-w-[200px] text-white py-3 rounded-full text-sm font-bold flex items-center justify-center gap-3 mb-4 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_25px_rgba(139,92,246,0.6)] transition-shadow"
+                style={{ background: 'linear-gradient(258.73deg, #6B2CEC 7.48%, #A156F7 92.51%)' }}
+            >
                 Order Now
                 <div className="bg-white rounded-full p-1">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">

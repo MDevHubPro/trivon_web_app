@@ -70,7 +70,7 @@ export default function HomeHero() {
                             <TypewriterText text="Designed to " className='bg-[radial-gradient(50%_50%_at_50%_50%,#FFFFFF_30%,rgba(255,255,255,0.5)_84.77%)] bg-clip-text text-transparent
 ' delay={0.2} speed={speed} />
 
-                            <span className=" relative flex md:inline-block space-x-2 items-center justify-center gap-4">
+                            <span className=" relative flex md:inline-block md:space-x-2  items-center justify-center gap-2">
                                 {/* Sequence 2: Continues with "Grow" */}
                                 <TypewriterText text="Grow"
                                     style={{
