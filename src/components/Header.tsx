@@ -11,7 +11,7 @@ export default function Header() {
   // New Design: Floating Pill Navbar
   return (
     <>
-      <header className="relative z-50 mx-auto max-w-5xl px-6 py-6  md:bg-[#0C0C0C] bg-opacity-50 rounded-b-3xl">
+      <header className="relative z-[80] mx-auto max-w-5xl px-6 py-6  md:bg-[#0C0C0C] bg-opacity-50 rounded-b-3xl">
         <div className="flex items-center justify-between w-full">
 
           {/* Logo */}
@@ -79,7 +79,7 @@ export default function Header() {
       {/* Mobile Slide-out Menu Overlay */}
       {
         isMenuOpen && (
-          <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-32 px-8 flex flex-col lg:hidden animate-in slide-in-from-top-10 duration-200 text-center">
+          <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl pt-32 px-8 flex flex-col lg:hidden animate-in slide-in-from-top-10 duration-200 text-center">
             <nav className="flex flex-col gap-4 text-center">
               {['Home', 'Services', 'Industries', 'Pricing', 'About Us', 'Case Study', 'Contact'].map((item) => {
                 const path = item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`;
